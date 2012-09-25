@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang='ja'> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <section>
+        <h1>始める - 型の定義</h1>
+          Haskellではまずデータ型を定義し、そしてそのデータ型を操作する関数を書くことでプログラムを構築していきます。
+          <h2>碁盤の表現</h2>
+          <ol>
+                  <li>碁盤は二次元のマス目で、9路盤、13路盤、19路盤がある。</li>
+                  <li>碁盤上の目は黒石、白石、何もない、の3種類の状態を取り得る。</li>
+          </ol>
+          これを型として表現すると、以下のようになります。
+          <pre>
+data Piece = Black | White
+data BoardSize = Board19 | Board13 | Board9
+data GoBoard = GoBoard BoardSize [[Maybe Piece]]
+          </pre>
+          <div>
+          dataの左辺（Piece, BoardSize, GoBoard）は型コンストラクタ、右辺はデータコンストラクタと呼ばれます。
+          <ul>
+                  <li>Pieceは碁石を表す型。黒石／白石の2種類からなる</li>
+                  <li>GoBoardのデータコンストラクタ（つまり、GoBoard BoardSize [[Piece]]）のパラメータはBoardSizeと、Maybe Pieceの2次元のリストからなる。</li>
+                  <li>BoardSizeの３つのデータコンストラクタは19路盤、13路盤、9路盤の３つにそれぞれ対応する。</li>
+          </ul>
+          データコンストラクタはパラメータを取るものと、取らないものがあります。上の例では、Black, Whiteなどはパラメータをとりません。GoBoardはパラメータを２つ取ります。<br>
+
+          データコンストラクタがパラメータを取る場合、データコンストラクタの名前に続いてパラメータの型（型コンストラクタ）を書きます。データコンストラクタを使って
+<pre>
+data GoBoard = GoBoard Board19 [[Maybe Piece]]  -- コンパイルエラー
+</pre>
+          というようには書けないので注意して下さい。ちなみに、データコンストラクタと型コンストラクタは異なる名前空間に属するので、GoBoardの例のように同じ名前をつけることが出来ます。</div>
+
+          <div>
+                            Maybeは以下のような定義です。
+          <pre>
+data Maybe a = Just a | Nothing
+          </pre>
+                            Maybe aはパラメータを取るデータコンストラクタのJustと、パラメータのないNothingからなります。ここでaとは何でしょうか？　aは型変数といい、任意の型を入れることで、初めて型コンストラクタとして完全なものになります。たとえば、aにIntを入れてみると、
+                            <pre>
+data Maybe Int = Just Int | Nothing  -- 注：説明のためで、この式はコンパイルエラー。
+</pre>
+aに[String]を入れた場合、
+<pre>
+data Maybe [String] = Just [String] | Nothing -- 注：説明のためで、この式はコンパイルエラー。
+                            </pre>
+といった感じです。GoBoard型の場合、aにPieceが入っています。つまり、
+data Maybe Piece = Just Piece | Nothing
+ということになります。
+
+<div>これらを使って、9路盤で4手目まで打った盤面を表現してみましょう。
+<pre>
+board :: GoBoard
+board = GoBoard Board9 ps
+  where
+    ps :: [[Maybe Piece]]
+    ps = [
+           [Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+          ,[Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing] 
+          ,[Nothing, Just Black, Nothing, Nothing, Nothing, Nothing, Just White, Nothing, Nothing] 
+          ,[Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing] 
+          ,[Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing] 
+          ,[Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing] 
+          ,[Nothing, Just Black, Nothing, Nothing, Nothing, Nothing, Just White, Nothing, Nothing] 
+          ,[Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing] 
+          ,[Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
+          ]
+</pre>
+ソースコード自体もなんとなく碁盤の目っぽく見えるきもしますね。boardはGoBoard型の値で、where節内で定義されているpsは[[Maybe Piece]]型の値です。:: GoBoardや:: [[Maybe Piece]]は型宣言の構文です。この場合は型推論されるので書かなくてもコンパイルできるのですが、型宣言を書いておくと、
+<ol>
+        <li>コンパイルで型エラーが起きたときに原因が分かりやすくなる。</li>
+        <li>コードを後で読むときにドキュメントとして役立つ。型を見るだけでその値、関数の役割が分かることもしばしばある。</li>
+</ol>
+というメリットがあります。
+</div>
+
+      </div>
+      <h2>着手の表現</h2>
+      着手を表現するのにに必要なのは、
+      <ol>
+              <li>石を置いた座標</li>
+              <li>置いた石（黒／白）</li>
+              <li>取った石</li>
+      </ol>
+      といったことです。取る石の判定は最初は実装しないので、さしあたり1,2の情報を保持することにしましょう。
+      <pre>
+data Position = Position Int Int
+data Move = Move Piece Position
+      </pre>
+          <ol>
+                  <li><a href='tutorial2.html'>プログラムを書き始める - 型の定義</a></li>
+                  <li><a href='tutorial3.html'>碁盤のデータを表示する - 関数定義</a></li>
+                  <li><a href='tutorial4.html'>棋譜を読み込む - パーサーコンビネータParsec</a></li>
+                  <li><a href='tutorial5.html'>棋譜データをHTMLで出力する - Blaze-htmlの使用</a></li>
+                  <li><a href='tutorial6.html'>リファクタリング - Stateモナドを使って碁盤データを計算</a></li>
+          </ol>
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
+

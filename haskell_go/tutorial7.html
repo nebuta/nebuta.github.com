@@ -22,17 +22,28 @@
         <![endif]-->
 
         <section>
-        <h1>Haskellで囲碁の棋譜ソフトを作る</h1>
-        <p>Haskellで囲碁の盤面を表現し、さらに棋譜ファイル（SGFファイル）の入力、HTMLへの出力を実装する。さらにモナドを使ってリファクタリングし、プログラムの見通しをよくする。</p>
-        <p>対象者：　(1) Haskellを少しかじったことのある人 (2) Haskellを少しかじったが、「なんだこんな抽象的なもので実用プログラムが書けるわけないだろ」とか思った人</p>
-          <h2>目次</h2>
+        <h1>Haskellイディオム集</h1>
+        よくプログラムを書くのは文章を書くのと似ている、とかいうのを聞きますが、文法があって語彙があって比喩などの修辞法を使いつつ、それを論理的に構築する、という意味では確かにそうなのでしょう。またプログラミングにはイディオムがあって、それを覚えていると美しくかつ効率的に書けます。数学的と見なされることの多いHaskellでもそういったイディオムに慣れることは案外大事というのが私の印象です。まずは<a href='http://hackage.haskell.org/packages/archive/base/latest/doc/html/Data-List.html'>Data.List</a>ライブラリをHackage上で見ておきましょう。再頻出の関数
+        <div>リスト</div>
+        <pre>
+map :: (a->b)->[a]->[b]
+> map (*2) [1,3,7]
+[2,6,14]
+</pre>
+        <div>二次元のリスト</div>
+<pre>
+> map (map (+3)) [[1,3],[10,7],[5,2]]
+[[4,6],[13,10],[8,5]]
+
+filter :: 
+</pre>
+        <h2></h2>
           <ol>
                   <li><a href='tutorial2.html'>プログラムを書き始める - 型の定義</a></li>
                   <li><a href='tutorial3.html'>碁盤のデータを表示する - 関数定義</a></li>
                   <li><a href='tutorial4.html'>棋譜を読み込む - パーサーコンビネータParsec</a></li>
                   <li><a href='tutorial5.html'>棋譜データをHTMLで出力する - Blaze-htmlの使用</a></li>
                   <li><a href='tutorial6.html'>リファクタリング - Stateモナドを使って碁盤データを計算</a></li>
-                  <li><a href='tutorial7.html'>付録 - Haskellで常用する関数、イディオムの一覧</a></li>
           </ol>
         </section>
 
@@ -50,4 +61,5 @@
         </script>
     </body>
 </html>
+
 

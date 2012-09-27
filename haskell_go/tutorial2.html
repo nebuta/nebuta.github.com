@@ -12,8 +12,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/main.css">
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>
@@ -55,19 +55,11 @@ data GoBoard = GoBoard Board19 [[Maybe Piece]]  -- コンパイルエラー
           <pre>
 data Maybe a = Just a | Nothing
           </pre>
-                            Maybe aはパラメータを取るデータコンストラクタのJustと、パラメータのないNothingからなります。ここでaとは何でしょうか？　aは型変数といい、任意の型を入れることで、初めて型コンストラクタとして完全なものになります。たとえば、aにIntを入れてみると、
-                            <pre>
-data Maybe Int = Just Int | Nothing  -- 注：説明のためで、この式はコンパイルエラー。
-</pre>
-aに[String]を入れた場合、
-<pre>
-data Maybe [String] = Just [String] | Nothing -- 注：説明のためで、この式はコンパイルエラー。
-                            </pre>
-といった感じです。GoBoard型の場合、aにPieceが入っています。つまり、
+                            Maybe aはパラメータを取るデータコンストラクタのJustと、パラメータのないNothingからなります。ここでaとは何でしょうか？　aは型変数といい、任意の型を入れることで、初めて完全な型になります。たとえば、aにIntを当てはめてみると、data Maybe Int = Just Int | Nothing というように、また、aに[String]を入れた場合、data Maybe [String] = Just [String] | Nothing というようになります。<p>GoBoard型の場合、aにPieceが入っています。つまり、
 data Maybe Piece = Just Piece | Nothing
-ということになります。
+ということになるので、Maybe Piece型の値はJust Black, Just White, Nothingのいずれかになります。ここで注意ですが、Just Pieceというのは値としてはありえません。なぜならPieceは型であるから。</p>
 
-<div>これらを使って、9路盤で4手目まで打った盤面を表現してみましょう。
+<div>さて、これらを使って、9路盤で4手目まで打った盤面を表現してみましょう。
 <pre>
 board :: GoBoard
 board = GoBoard Board9 ps
@@ -93,19 +85,49 @@ board = GoBoard Board9 ps
 というメリットがあります。
 </div>
 
+これで完璧に碁盤を表現できたものの、Just Whiteとか、Nothingとかリストにたくさん並べて書くのが大変ですね。後ほど、このページの最後で、文字列から盤面を生成するような機能を実装します。
+
       </div>
       <h2>着手の表現</h2>
-      着手を表現するのにに必要なのは、
+      着手を表現するのに必要なのは、
       <ol>
-              <li>石を置いた座標</li>
               <li>置いた石（黒／白）</li>
+              <li>石を置いた座標</li>
               <li>取った石</li>
       </ol>
-      といったことです。取る石の判定は最初は実装しないので、さしあたり1,2の情報を保持することにしましょう。
+      といったことです。
       <pre>
 data Position = Position Int Int
-data Move = Move Piece Position
-      </pre>
+data Move = Move Piece Position [Position]  -- 置いた石、置いた座標、取った石の座標のリスト
+</pre>
+      <h2>碁盤の表示と文字列からの読み取り</h2>
+      GoBoardの値を文字列で表示したり、逆にGoBoardの値を文字列から生成したりする関数を定義しましょう。
+      Showクラスのインスタンスとして、show関数を定義します。こうすることでGHCi上でGoBoardの値を表示できます。show関数の型を見てみましょう。
+      <pre>
+Prelude> :t show
+show :: Show a => a -> String
+Prelude> :i show
+class Show a where
+  ...
+  show :: a -> String
+  ...
+  	-- Defined in `GHC.Show'
+Prelude> 
+</pre>
+      つまり、型aがShowクラスのインスタンスの時、showは a -> Stringの型を取ります。今回ShowクラスのインスタンスにするのはPieceとGoBoardです。
+      <pre>
+instance Show Piece where
+  show White = "W"
+  show Black = "B"
+
+instance Show GoBoard where
+  show (GoBoard _ pss) = unlines (map (concatMap showOnePos) pss)
+    where
+      showOnePos :: Maybe Piece -> String
+      showOnePos mp = maybe " " show p
+</pre>
+      ここで初めて関数を定義しました。関数定義の等号の左辺にはパターンマッチを書きます。パターンは小文字で始まる変数（すべての場合にマッチする）、あるいは大文字で始まるデータコンストラクタを使います。Piece型のshow関数では、Pieceの２つのデータコンストラクタBlackとWhiteに対してそれぞれパターンマッチさせています。
+      GoBoardに定義したshowは少しトリッキーな感じがしますね。以下に同等の関数を違った書き方で書いたものをいくつか挙げておきます。
           <ol>
                   <li><a href='tutorial2.html'>プログラムを書き始める - 型の定義</a></li>
                   <li><a href='tutorial3.html'>碁盤のデータを表示する - 関数定義</a></li>

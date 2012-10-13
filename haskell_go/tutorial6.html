@@ -14,20 +14,20 @@
     <div class="navbar-inner">
       <a class="brand" href="tutorial1.html">Haskellで囲碁ソフトを作ろう</a>
       <ul class="nav">
-        <li class='active'><a href="#">型の定義</a></li>
+        <li><a href="tutorial2.html">型の定義</a></li>
         <li><a href="tutorial3.html">関数定義</a></li>
         <li><a href="tutorial4.html">Parsec</a></li>
         <li><a href="tutorial5.html">Blaze-html</a></li>
-        <li><a href="tutorial6.html">Stateモナド</a></li>
+        <li class='active'><a href="#">Stateモナド</a></li>
         <li><a href="tutorial7.html">Haskellのイディオム</a></li>
       </ul>
     </div>
   </div>
   <div class='container'>
   <section>
-  <h1>始める - 型の定義</h1>
-  Haskellではまずデータ型を定義し、そしてそのデータを操作する関数を書くことでプログラムを構築していきます。
-  <h2>碁盤の表現</h2>
+  <h1>Stateモナドでリファクタリング</h1>
+    これまではParsec, Blazeとモナドを活用したライブラリを使ってプログラムを書いてきましたが、今度は私たちのプログラム本体にモナドを導入して、プログラムの見通しをよくします。
+  <h2>碁盤の表現、再び</h2>
   <ol>
     <li>碁盤は二次元のマス目で、9路盤、13路盤、19路盤がある。</li>
     <li>碁盤上の目は黒石、白石、何もない、の3種類の状態を取り得る。</li>

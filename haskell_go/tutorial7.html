@@ -8,7 +8,23 @@
   <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Haskellで囲碁ソフトを作ろう</a>
+      <ul class="nav">
+        <li><a href="tutorial2.html">型の定義</a></li>
+        <li><a href="#">関数定義</a></li>
+        <li><a href="#">Parsec</a></li>
+        <li><a href="#">Blaze-html</a></li>
+        <li><a href="#">Stateモナド</a></li>
+        <li class='active'><a href="#">Haskellのイディオム</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class='container'>
   <section>
+
   <h1>Haskellイディオム集</h1>
 よくプログラムを書くのは文章を書くのと似ている、とかいうのを聞きますが、文法があって語彙があって比喩などの修辞法を使いつつ、それを論理的に構築する、という意味では確かにそうなのでしょう。またプログラミングにはイディオムがあって、それを覚えていると美しくかつ効率的に書けます。数学的と見なされることの多いHaskellでもそういったイディオムに慣れることは案外大事というのが私の印象です。まずは<a href='http://hackage.haskell.org/packages/archive/base/latest/doc/html/Data-List.html'>Data.List</a>ライブラリをHackage上で見ておきましょう。再頻出の関数
   <div>リスト</div>
@@ -33,6 +49,7 @@ filter ::
     <li><a href='tutorial6.html'>リファクタリング - Stateモナドを使って碁盤データを計算</a></li>
   </ol>
   </section>
+</div>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="js/bootstrap.min.js"></script>
 

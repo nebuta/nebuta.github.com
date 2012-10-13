@@ -1,53 +1,67 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 
-          <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <section>
-        <h1>始める - 型の定義</h1>
-          Haskellではまずデータ型を定義し、そしてそのデータ型を操作する関数を書くことでプログラムを構築していきます。
-          <h2>碁盤の表現</h2>
-          <ol>
-                  <li>碁盤は二次元のマス目で、9路盤、13路盤、19路盤がある。</li>
-                  <li>碁盤上の目は黒石、白石、何もない、の3種類の状態を取り得る。</li>
-          </ol>
-          これを型として表現すると、以下のようになります。
-          <pre>
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="tutorial1.html">Haskellで囲碁ソフトを作ろう</a>
+      <ul class="nav">
+        <li class='active'><a href="#">型の定義</a></li>
+        <li><a href="tutorial3.html">関数定義</a></li>
+        <li><a href="tutorial4.html">Parsec</a></li>
+        <li><a href="tutorial5.html">Blaze-html</a></li>
+        <li><a href="tutorial6.html">Stateモナド</a></li>
+        <li><a href="tutorial7.html">Haskellのイディオム</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class='container'>
+  <section>
+  <h1>始める - 型の定義</h1>
+  Haskellではまずデータ型を定義し、そしてそのデータを操作する関数を書くことでプログラムを構築していきます。
+  <h2>碁盤の表現</h2>
+  <ol>
+    <li>碁盤は二次元のマス目で、9路盤、13路盤、19路盤がある。</li>
+    <li>碁盤上の目は黒石、白石、何もない、の3種類の状態を取り得る。</li>
+  </ol>
+  これを型として表現すると、以下のようになります。
+  <pre>
 data Piece = Black | White
 data BoardSize = Board19 | Board13 | Board9
 data GoBoard = GoBoard BoardSize [[Maybe Piece]]
           </pre>
-          <div>
-          dataの左辺（Piece, BoardSize, GoBoard）は型コンストラクタ、右辺はデータコンストラクタと呼ばれます。
-          <ul>
-                  <li>Pieceは碁石を表す型。黒石／白石の2種類からなる</li>
-                  <li>GoBoardのデータコンストラクタ（つまり、GoBoard BoardSize [[Piece]]）のパラメータはBoardSizeと、Maybe Pieceの2次元のリストからなる。</li>
-                  <li>BoardSizeの３つのデータコンストラクタは19路盤、13路盤、9路盤の３つにそれぞれ対応する。</li>
-          </ul>
-          データコンストラクタはパラメータを取るものと、取らないものがあります。上の例では、Black, Whiteなどはパラメータをとりません。GoBoardはパラメータを２つ取ります。<br>
+  <div>
+    dataの左辺（Piece, BoardSize, GoBoard）は型コンストラクタ、右辺はデータコンストラクタと呼ばれます。
+    <ul>
+      <li>Pieceは碁石を表す型。黒石／白石の2種類からなる</li>
+      <li>GoBoardのデータコンストラクタ（つまり、GoBoard BoardSize [[Piece]]）のパラメータはBoardSizeと、Maybe Pieceの2次元のリストからなる。</li>
+      <li>BoardSizeの３つのデータコンストラクタは19路盤、13路盤、9路盤の３つにそれぞれ対応する。</li>
+    </ul>
+    データコンストラクタはパラメータを取るものと、取らないものがあります。上の例では、Black, Whiteなどはパラメータをとりません。GoBoardはパラメータを２つ取ります。<br>
 
-          データコンストラクタがパラメータを取る場合、データコンストラクタの名前に続いてパラメータの型（型コンストラクタ）を書きます。データコンストラクタを使って
+    データコンストラクタがパラメータを取る場合、データコンストラクタの名前に続いてパラメータの型（型コンストラクタ）を書きます。データコンストラクタを使って
 <pre>
 data GoBoard = GoBoard Board19 [[Maybe Piece]]  -- コンパイルエラー
 </pre>
-          というようには書けないので注意して下さい。ちなみに、データコンストラクタと型コンストラクタは異なる名前空間に属するので、GoBoardの例のように同じ名前をつけることが出来ます。</div>
+    というようには書けないので注意して下さい。ちなみに、データコンストラクタと型コンストラクタは異なる名前空間に属するので、GoBoardの例のように同じ名前をつけることが出来ます。</div>
 
-          <div>
-                            Maybeは以下のような定義です。
-          <pre>
+  <div>
+    Maybeは以下のような定義です。
+    <pre>
 data Maybe a = Just a | Nothing
           </pre>
-                            Maybe aはパラメータを取るデータコンストラクタのJustと、パラメータのないNothingからなります。ここでaとは何でしょうか？　aは型変数といい、任意の型を入れることで、初めて完全な型になります。たとえば、aにIntを当てはめてみると、data Maybe Int = Just Int | Nothing というように、また、aに[String]を入れた場合、data Maybe [String] = Just [String] | Nothing というようになります。<p>GoBoard型の場合、aにPieceが入っています。つまり、
-data Maybe Piece = Just Piece | Nothing
-ということになるので、Maybe Piece型の値はJust Black, Just White, Nothingのいずれかになります。ここで注意ですが、Just Pieceというのは値としてはありえません。なぜならPieceは型であるから。</p>
+    Maybe aはパラメータを取るデータコンストラクタのJustと、パラメータのないNothingからなります。ここでaとは何でしょうか？　aは型変数といい、任意の型を入れることで、初めて完全な型になります。たとえば、aにIntを当てはめてみると、data Maybe Int = Just Int | Nothing というように、また、aに[String]を入れた場合、data Maybe [String] = Just [String] | Nothing というようになります。<p>GoBoard型の場合、aにPieceが入っています。つまり、
+    data Maybe Piece = Just Piece | Nothing
+    ということになるので、Maybe Piece型の値はJust Black, Just White, Nothingのいずれかになります。ここで注意ですが、Just Pieceというのは値としてはありえません。なぜならPieceは型であるから。</p>
 
-<div>さて、これらを使って、9路盤で4手目まで打った盤面を表現してみましょう。
+    <div>さて、これらを使って、9路盤で4手目まで打った盤面を表現してみましょう。
 <pre>
 board :: GoBoard
 board = GoBoard Board9 ps
@@ -65,33 +79,33 @@ board = GoBoard Board9 ps
           ,[Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing]
           ]
 </pre>
-ソースコード自体もなんとなく碁盤の目っぽく見えるきもしますね。boardはGoBoard型の値で、where節内で定義されているpsは[[Maybe Piece]]型の値です。:: GoBoardや:: [[Maybe Piece]]は型宣言の構文です。この場合は型推論されるので書かなくてもコンパイルできるのですが、型宣言を書いておくと、
-<ol>
-        <li>コンパイルで型エラーが起きたときに原因が分かりやすくなる。</li>
-        <li>コードを後で読むときにドキュメントとして役立つ。型を見るだけでその値、関数の役割が分かることもしばしばある。</li>
-</ol>
-というメリットがあります。
+    ソースコード自体もなんとなく碁盤の目っぽく見えるきもしますね。boardはGoBoard型の値で、where節内で定義されているpsは[[Maybe Piece]]型の値です。:: GoBoardや:: [[Maybe Piece]]は型宣言の構文です。この場合は型推論されるので書かなくてもコンパイルできるのですが、型宣言を書いておくと、
+    <ol>
+      <li>コンパイルで型エラーが起きたときに原因が分かりやすくなる。</li>
+      <li>コードを後で読むときにドキュメントとして役立つ。型を見るだけでその値、関数の役割が分かることもしばしばある。</li>
+    </ol>
+    というメリットがあります。
+  </div>
+
+  これで完璧に碁盤を表現できたものの、Just Whiteとか、Nothingとかリストにたくさん並べて書くのが大変ですね。後ほど、このページの最後で、文字列から盤面を生成するような機能を実装します。
+
 </div>
-
-これで完璧に碁盤を表現できたものの、Just Whiteとか、Nothingとかリストにたくさん並べて書くのが大変ですね。後ほど、このページの最後で、文字列から盤面を生成するような機能を実装します。
-
-      </div>
-      <h2>着手の表現</h2>
-      着手を表現するのに必要なのは、
-      <ol>
-              <li>置いた石（黒／白）</li>
-              <li>石を置いた座標</li>
-              <li>取った石</li>
-      </ol>
-      といったことです。
-      <pre>
+<h2>着手の表現</h2>
+着手を表現するのに必要なのは、
+<ol>
+  <li>置いた石（黒／白）</li>
+  <li>石を置いた座標</li>
+  <li>取った石</li>
+</ol>
+といったことです。
+<pre>
 data Position = Position Int Int
 data Move = Move Piece Position [Position]  -- 置いた石、置いた座標、取った石の座標のリスト
 </pre>
-      <h2>碁盤の表示と文字列からの読み取り</h2>
-      GoBoardの値を文字列で表示したり、逆にGoBoardの値を文字列から生成したりする関数を定義しましょう。
-      Showクラスのインスタンスとして、show関数を定義します。こうすることでGHCi上でGoBoardの値を表示できます。show関数の型を見てみましょう。
-      <pre>
+<h2>碁盤の表示と文字列からの読み取り</h2>
+GoBoardの値を文字列で表示したり、逆にGoBoardの値を文字列から生成したりする関数を定義しましょう。
+Showクラスのインスタンスとして、show関数を定義します。こうすることでGHCi上でGoBoardの値を表示できます。show関数の型を見てみましょう。
+<pre>
 Prelude> :t show
 show :: Show a => a -> String
 Prelude> :i show
@@ -99,11 +113,11 @@ class Show a where
   ...
   show :: a -> String
   ...
-  	-- Defined in `GHC.Show'
+    -- Defined in `GHC.Show'
 Prelude> 
 </pre>
-      つまり、型aがShowクラスのインスタンスの時、showは a -> Stringの型を取ります。今回ShowクラスのインスタンスにするのはPieceとGoBoardです。
-      <pre>
+つまり、型aがShowクラスのインスタンスの時、showは a -> Stringの型を取ります。今回ShowクラスのインスタンスにするのはPieceとGoBoardです。
+<pre>
 instance Show Piece where
   show White = "W"
   show Black = "B"
@@ -114,25 +128,19 @@ instance Show GoBoard where
       showOnePos :: Maybe Piece -> String
       showOnePos mp = maybe " " show p
 </pre>
-      ここで初めて関数を定義しました。関数定義の等号の左辺にはパターンマッチを書きます。パターンは小文字で始まる変数（すべての場合にマッチする）、あるいは大文字で始まるデータコンストラクタを使います。Piece型のshow関数では、Pieceの２つのデータコンストラクタBlackとWhiteに対してそれぞれパターンマッチさせています。
-      GoBoardに定義したshowは少しトリッキーな感じがしますね。以下に同等の関数を違った書き方で書いたものをいくつか挙げておきます。
-          <ol>
-                  <li><a href='tutorial2.html'>プログラムを書き始める - 型の定義</a></li>
-                  <li><a href='tutorial3.html'>碁盤のデータを表示する - 関数定義</a></li>
-                  <li><a href='tutorial4.html'>棋譜を読み込む - パーサーコンビネータParsec</a></li>
-                  <li><a href='tutorial5.html'>棋譜データをHTMLで出力する - Blaze-htmlの使用</a></li>
-                  <li><a href='tutorial6.html'>リファクタリング - Stateモナドを使って碁盤データを計算</a></li>
-          </ol>
-        </section>
-            <script src="http://code.jquery.com/jquery-latest.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+ここで初めて関数を定義しました。関数定義の等号の左辺にはパターンマッチを書きます。パターンは小文字で始まる変数（すべての場合にマッチする）、あるいは大文字で始まるデータコンストラクタを使います。Piece型のshow関数では、Pieceの２つのデータコンストラクタBlackとWhiteに対してそれぞれパターンマッチさせています。
+GoBoardに定義したshowは少しトリッキーな感じがしますね。以下に同等の関数を違った書き方で書いたものをいくつか挙げておきます。
+</section>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
     </body>
-</html>
+  </html>
 

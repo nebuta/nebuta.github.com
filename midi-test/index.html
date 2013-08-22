@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+ <meta charset="utf-8" />
+ <!-- midi.js package -->
+ <script src="./js/MIDI/AudioDetect.js" type="text/javascript"></script>
+ <script src="./js/MIDI/LoadPlugin.js" type="text/javascript"></script>
+ <script src="./js/MIDI/Plugin.js" type="text/javascript"></script>
+ <script src="./js/MIDI/Player.js" type="text/javascript"></script>
+ <script src="./js/Window/DOMLoader.XMLHttp.js" type="text/javascript"></script>
+ <script src="./js/Window/DOMLoader.script.js" type="text/javascript"></script>
+ <!-- extras -->
+ <script src="./inc/Base64.js" type="text/javascript"></script>
+ <script src="./inc/base64binary.js" type="text/javascript"></script>
+ <script src="./underscore-min.js" type="text/javascript"></script>
+ <script src="./backbone-min.js" type="text/javascript"></script>
+ <script src='jquery-2.0.3.min.js'></script>
+
+ <title>MIDI.js demo</title>
+
+<style type="text/css">
+	body {
+		margin: 30px;
+	}
+	h1{
+		font-size: 20px;
+		font-family: Sans-serif;
+	}
+	.pad{
+		width: 80px;
+		height: 80px;
+		background: gray;
+		margin: 5px;
+		float: left;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.pad > a{
+		vertical-align: middle;
+		height: 200px;
+	}
+	.pad:hover{
+		background: #8888ff;
+		cursor: pointer;
+	}
+	td.on {
+		background: #8888ee;
+		text-align: center;
+	}
+	table#legend{
+		text-align: center;
+		border-collapse: collapse;
+	}
+	table td {
+		width: 80px;
+		height: 40px;
+	}
+	table#legend thead {
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+	}
+	table#legend tbody {
+		border-bottom: 1px solid black;
+	}
+	a#pb1 {
+		margin-left: 45px;
+	}
+	a#pb3 {
+		margin-left: 90px;		
+	}
+	#capo{
+		width: 80px;
+		margin: 20px 0px 20px 0px;
+	}
+
+</style>
+</head>
+
+<body>
+<h1> Chord player using MIDI.js</h1>
+<p>Click pads to play chords. Use keyboard to modify chords.</p>	
+<div class='pads'>
+	<a class='pad' id='pb1' data-base='C#' data-base2='D♭' data-chord='C#'>C#</a>
+	<a class='pad' id='pb2' data-base='D#' data-base2='E♭' data-chord='D#'>D#</a>
+
+	<a class='pad' id='pb3' data-base='F#' data-base2='G♭' data-chord='F#'>F#</a>
+	<a class='pad' id='pb4' data-base='G#' data-base2='A♭' data-chord='G#'>G#</a>
+	<a class='pad' id='pb5' data-base='A#' data-base2='B♭' data-chord='A#'>A#</a>
+	<div style='clear:both;'></div>
+
+	<a class='pad' id='p1' data-base='C' data-chord='C'>C</a>
+	<a class='pad' id='p2' data-base='D' data-chord='D'>D</a>
+	<a class='pad' id='p3' data-base='E' data-chord='E'>E</a>
+	<a class='pad' id='p4' data-base='F' data-chord='F'>F</a>
+	<a class='pad' id='p5' data-base='G' data-chord='G'>G</a>
+	<a class='pad' id='p6' data-base='A' data-chord='A'>A</a>
+	<a class='pad' id='p7' data-base='B' data-chord='B'>B</a>
+	<div style='clear:both;'></div>
+</div>
+<div>
+	Capo: <input id='capo'> (e.g. C#, B♭)
+</div>
+<div style='margin-top: 20px;'>
+	Legend:
+	<table id='legend'>
+		<thead><tr>
+			<td>Shift</td>
+			<td>a/z</td>
+			<td>Command</td>
+			<td>Option <br>(Alt)</td>
+			<td></td>
+		</tr></thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td class='on'>&#x2713;</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>Am</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class='on'>&#x2713;</td>
+				<td></td>
+				<td>A7</td>
+			</tr>
+			<tr>
+				<td class='on'>&#x2713;</td>
+				<td></td>
+				<td class='on'>&#x2713;</td>
+				<td></td>
+				<td>Am7</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class='on'>&#x2713;</td>
+				<td>Asus4</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class='on'>&#x2713;</td>
+				<td class='on'>&#x2713;</td>
+				<td>AM7</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class='on'>a</td>
+				<td></td>
+				<td></td>
+				<td>Aaug</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class='on'>z</td>
+				<td></td>
+				<td></td>
+				<td>Adim</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Space: Turn off all notes</p>
+</div>
+
+<script type="text/javascript">
+var log = function(d){console.log(d);};
+
+var KeyState = Backbone.Model.extend({
+	defaults: {
+		"command": false,
+		"shift": false,
+		"alt": false,
+		"a": false,
+		"z": false
+	},
+	initialize: function(){
+		this.on('change',function(){
+			updatePads();
+		});
+	}
+});
+
+function updatePads(){
+	var a = keyState.attributes;
+	var ns = _.range(1,8);
+	_.each(ns,function(n){
+		var el = $('#p'+n);
+		var key = (a.shift ? "1" : "0") + (a.a ? "1" : (a.z ? "2" : "0")) + (a.command ? "1" : "0") + (a.alt ? "1" : "0");
+		var change = {"0000": "", "1000": "m", "0010": "7", "1010": "m7", "0001": "sus4", "0011": "M7", "0100": "aug","0200": "dim"};
+
+		var base = el.attr('data-base');
+		var txt = base + (change[key] || "");
+		el.attr('data-chord',txt);
+		el.text(txt);
+	});
+	var nsb = _.range(1,6);
+	_.each(nsb,function(n){
+		var el = $('#pb'+n);
+		var key = (a.shift ? "1" : "0") + (a.a ? "1" : (a.z ? "2" : "0")) + (a.command ? "1" : "0") + (a.alt ? "1" : "0");
+		var change = {"0000": "", "1000": "m", "0010": "7", "1010": "m7", "0001": "sus4", "0011": "M7", "0100": "aug","0200": "dim"};
+
+		var base1 = el.attr('data-base');
+		var base2 = el.attr('data-base2');
+		el.attr('data-chord',base1 + (change[key] || ""));
+		el.html(base1 + (change[key] || "") + "<br>" + base2 + (change[key] || ""));
+	});
+}
+
+var keyState = new KeyState();
+
+function keyDownUp(e,isDown){
+    switch (e.keyCode){
+    	case 16:
+			keyState.set({shift: isDown});
+   		 	break;
+    	case 17:
+			keyState.set({ctrl: isDown});
+   		 	break;
+    	case 18:
+			keyState.set({alt: isDown});
+    		break;
+    	case 65:
+			keyState.set({a: isDown});
+    		break;
+    	case 90:
+			keyState.set({z: isDown});
+    		break;
+    	case 91:
+    	case 92:
+    	case 224: // Firefox
+			keyState.set({command: isDown});
+			break;
+
+		case 32: //Space key
+			stopAll();
+			break;
+    }
+}
+
+$(function(){
+	$('.pad').click(function(e){
+		var elem = $(e.target);
+		var a = elem.attr('data-chord');
+		chord(elem.attr('data-chord'),0);
+	});
+	$(window).keydown(function (e){
+		keyDownUp(e,true);
+	});
+
+	$(window).keyup(function (e){
+		keyDownUp(e,false);
+	});
+
+	$('#capo').on('change',function(e){
+		set_capo($(e.target).val());
+	});
+
+	MIDI.loadPlugin({
+		soundfontUrl: "./soundfont/",
+		instrument: "acoustic_grand_piano",
+		callback: function() {
+			var delay = 0; // play one note every quarter second
+			var note = 50; // the MIDI note
+			var velocity = 127; // how hard the note hits
+
+			// play the note
+			MIDI.setVolume(0, 80);
+		//	play_sequence(['Am','Em','F','Em','F','C','Dm7','Gsus4','G']);
+		}
+	});
+});
+
+function stopAll(){
+	_.each(_.range(50),function(n){
+		MIDI.noteOff(0, 30+n, 0);
+	});
+}
+
+var notes = {"C": 0, "C#": 1, "D♭": 2, "D": 2, "D#": 3, "E♭": 3, "E": 4, "F": 5, "F#": 6, "G♭": 6, "G": 7,
+				"G#": 8, "A♭": 8, A: 9, "A#": 10, "B♭": 10, "B": 11};
+
+var shift = 0;
+
+function set_capo(c){
+	shift = (notes[c] || 0);
+}
+
+function play_sequence(chords){
+	var delay = 0;
+	_.each(chords,function(c){
+		chord(c,delay);
+		delay += 2;
+	});
+}
+
+function chord(c,delay){
+	//ToDo: Handle flat notes.
+	var m = c.match(/^([CDEFGAB][#♭+-]?)(7|m7|M7|m|sus4|aug|dim)?$/);
+	var root = 48+notes[m[1]]+shift;
+
+	if(m[2] == 'm'){
+		multi_notes(root,delay,127,1.5,[0,3,7]);
+	}else if(m[2] == '7'){
+		multi_notes(root,delay,127,1.5,[0,4,7,10]);
+	}else if(m[2] == 'sus4'){
+		multi_notes(root,delay,127,1.5,[0,5,7]);
+	}else if(m[2] == 'm7'){
+		multi_notes(root,delay,127,1.5,[0,3,7,10]);
+	}else if(m[2] == 'M7'){
+		multi_notes(root,delay,127,1.5,[0,4,7,11]);
+	}else if(m[2] == 'aug'){
+		multi_notes(root,delay,127,1.5,[0,4,8]);
+	}else if(m[2] == 'dim'){
+		multi_notes(root,delay,127,1.5,[0,3,6]);
+	}else {  // Major code
+		multi_notes(root,delay,127,1.5,[0,4,7]);
+	}
+}
+
+function multi_notes(note,delay,velocity,duration,notes){
+	_.each(notes,function(n){
+			MIDI.noteOn(0, note+n, velocity, delay);		
+			MIDI.noteOff(0, note+n, delay + duration);
+	});
+}
+/*
+var major = function(note,delay,velocity,duration) {
+	multi_notes(note,delay,velocity,duration,[0,4,7]);
+};
+
+var minor = function(note,delay,velocity,duration) {
+	multi_notes(note,delay,velocity,duration,[0,3,7]);
+};
+
+var sus4 = function(note,delay,velocity,duration) {
+	multi_notes(note,delay,velocity,duration,[0,5,7]);
+};
+
+var minor_seventh = function(note,delay,velocity,duration) {
+	multi_notes(note,delay,velocity,duration,[0,3,7,10]);
+};
+
+var seventh = function(note,delay,velocity,duration) {
+	multi_notes(note,delay,velocity,duration,[0,4,7,10]);
+};
+
+var major_seventh = function(note,delay,velocity,duration) {
+	multi_notes(note,delay,velocity,duration,[0,4,7,11]);
+};
+*/
+
+</script>
+</body>
+</html>

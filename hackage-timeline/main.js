@@ -75,21 +75,6 @@ function calcOrder(){
 	});
 }
 
-function changeModeOld(mode){
-	if(!initialized){
-		init();
-	}
-	currentMode = mode;
-	var rows = svg1.selectAll('g');
-	var len = selected.length;
-	var p2 = animation ? rows.transition().duration(3000) : rows;
-	p2.attr('transform',function(d,i){
-			var pos = (this.getAttribute('order'+mode) || selected.length-1);
-			var y = pos/len*height2+margin_top;
-			return 'translate(0,'+y+')';
-		});
-}
-
 function changeMode(mode){
 	if(mode==-1){
 		return;
@@ -202,10 +187,8 @@ function init(){
 
 	calcOrder();
 
-	vs = data[0][0];
 	var len = selected.length;
 	var count = 0;
-	var arr = _.range(0,100);
 	var g = [];
 	_.each(_.range(0,selected.length),function(i){
 		var p = selected[i];
@@ -252,7 +235,7 @@ function init(){
 	    	.text(''+(firstYear+i))
 			.style("font-family", 'Helvetica, Sans-Serif');
 	});
-	_.each(_.range(0,11),function(i){
+	_.each(_.range(0,numYears+1),function(i){
 		svg1.append('line')
 			.attr("x1", i*dx+margin_left)
 	    	.attr("y1", margin_top-3) 
@@ -282,4 +265,3 @@ d3.select("#animation").on("change", function() {
 });
 
 //changeMode(0);
-

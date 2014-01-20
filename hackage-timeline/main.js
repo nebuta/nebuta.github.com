@@ -159,6 +159,8 @@ function mapModuleCount(n){
 	}	
 }
 
+var stat;
+
 function init(){
   initialized = true;
 
@@ -185,11 +187,16 @@ function init(){
 	});
 	*/
 
+	stat = _.map(selected,function(p){
+		return {name: p[0],update:p[1].length,firstDate: p[1][0][1]};
+	});
+
 	calcOrder();
 
 	var len = selected.length;
 	var count = 0;
 	var g = [];
+	var endDate = new Date(""+(firstYear+numYears)+"-01-01");
 	_.each(_.range(0,selected.length),function(i){
 		var p = selected[i];
 		g[i] = svg1.append('g')
@@ -211,7 +218,7 @@ function init(){
 			g[i].append('rect')
 				.attr('class','point')
 				.attr('data-year',v[1].getFullYear())
-		    	.attr("x", (1 - (new Date(""+(firstYear+numYears)+"-01-01") - v[1])/(1000*60*60*24*365*numYears))*width2+margin_left)
+		    	.attr("x", (1 - (endDate - v[1])/(1000*60*60*24*365*numYears))*width2+margin_left)
 		   		.attr("width", pixelSize)
 		   		.attr("height", pixelSize)
 	    		.style('fill',function(){return scaled_color(v[2],0,20);});

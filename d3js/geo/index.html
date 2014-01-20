@@ -60,38 +60,38 @@ var width = 600,
 var centered;
 var g;
 var svg = d3.select("body").append("svg")
-.attr("width", width)
-.attr("height", height);
+  .attr("width", width)
+  .attr("height", height);
 
-  var proj = d3.geo.mercator()
+var proj = d3.geo.mercator()
   .precision(0.1)
-.center([138, 35])
+  .center([138, 35])
   //  .parallels([50, 60])
   .rotate([0,0,0])
-.scale(1200)
+  .scale(1200)
   .translate([width / 2, height / 2]);
 
-  var path;
-  var paths;
-  var info = svg.append('text')
+var path;
+var paths;
+var info = svg.append('text')
   .attr('width',80)
   .attr('height',20)
   .attr('y',10)
-  .attr('fill','black')
+  .attr('fill','black');
 
-  d3.json("prefs.json", function(error, dat) {
-      console.log(dat);
-      var subunits = topojson.feature(dat, dat.objects.prefs_jpn);
-      path = d3.geo.path().projection(proj);
+d3.json("prefs.json", function(error, dat) {
+  console.log(dat);
+  var subunits = topojson.feature(dat, dat.objects.prefs_jpn);
+  path = d3.geo.path().projection(proj);
+      
+  g = svg.append('g');
+  var cities = g.selectAll(".city")
+    .data(subunits.features)
+    .enter().append("path")
+    .attr("class", function(d) { return "subunit " + d.id; })
+    .attr("d", path);
 
-      g = svg.append('g');
-      var cities = g.selectAll(".city")
-      .data(subunits.features)
-      .enter().append("path")
-      .attr("class", function(d) { return "subunit " + d.id; })
-      .attr("d", path);
-
-      cities.on('click',clicked);
+    cities.on('click',clicked);
 
   });
 
@@ -112,12 +112,12 @@ function clicked(d) {
   }
 
   g.selectAll("path")
-      .classed("active", centered && function(d) { return d === centered; });
+    .classed("active", centered && function(d) { return d === centered; });
 
   g.transition()
-      .duration(750)
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
-      .style("stroke-width", (0.5 / k) + "px");
+    .duration(750)
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+    .style("stroke-width", (0.5 / k) + "px");
 }
 
 </script>

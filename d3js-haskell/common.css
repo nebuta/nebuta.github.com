@@ -1,0 +1,13 @@
+body {
+  margin: 20px auto;
+  width: 800px;
+  font-family: Sans-Serif;
+}
+
+pre > code {
+  font-size: 16px;
+  overflow-x: auto;
+  background: #eeeeee;
+  display: block;
+}
+

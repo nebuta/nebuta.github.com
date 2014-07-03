@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1D array of rects, binding of data to SVG elements</title>
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.5/styles/default.min.css">
+  <link rel="stylesheet" href="common.css">  
+</head>
+<body>
+
+<p>Using this Haskell library, you can compose the data visualization with EDSL in Haskell, then the library generates a piece of JavaScript source code from that.</p>
+<h2>tutorial1.hs</h2>
+<pre><code>
+{-# LANGUAGE OverloadedStrings,NoImplicitPrelude #-}
+
+-- Make (->) an instance of Category
+import Prelude hiding (id,(.))
+import Control.Category
+import D3JS
+
+rects :: St ()
+rects = do
+  dat <- assign $ range 10 >>> mapD3 ((mkObj [("v",random_*10)]))
+  svg <- mkSvg "body" 400 400
+  execute $ svg .> enterData Rect dat
+    >>> sizei_ 40 40
+    >>> attrf "x" (i_ * 40)
+    >>> attrd "y" 0
+    >>> fill (funcExp $ hsl (PFunc' $ (d_ ..> "v" * (NDouble 360))) 0.5 0.5)
+</code></pre>
+
+<p>To generate a JavaScript file from this, run the following on GHCi</p>
+<pre><code>
+Prelude> :l tutorial.hs
+*Main> import Data.Text as T
+*Main T> T.writeFile "output.js" $ reify rects
+</code></pre>
+
+<h2>output.js</h2>
+<pre><code>
+var array0 = d3.range(10).map(function(d,i){return {v: Math.random() * 10.0};});
+var sel1 = d3.select("body").append("svg").attr("width",400.0).attr("height",400.0);
+sel1.selectAll("rect").data(array0).enter().append("rect").attr("width",40.0).attr("height",40.0).attr("x",function(d,i){return i * 40.8;}).attr("y",0.0).style("fill",function(d,i){return d3.hsl(d.v * 360.0,0.5,0.5);});
+</code></pre>
+Variables are automatically assigned whenever necessary.
+This JavaScript code appends svg element to body and add rects inside the svg. So prepare the following index.html (common throughout these tutorials) in the same folder as output.js, and open it in a web browser to see the result.
+
+<h2>index.html</h2>
+<pre><code>
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;script src='http://d3js.org/d3.v3.min.js' charset='utf-8'&gt;&lt;/script&gt;
+    &lt;script src='output.js' charset='utf-8'&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</body>
+</html>

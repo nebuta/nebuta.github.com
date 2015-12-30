@@ -1,0 +1,1815 @@
+{
+  "purescript-ace": {
+    "ace-builds": "~1.2.0",
+    "purescript-console": "^0.1.1",
+    "purescript-dom": "^0.2.12",
+    "purescript-arrays": "^0.4.3",
+    "purescript-foreign": "^0.7.2",
+    "purescript-nullable": "^0.2.1",
+    "purescript-prelude": "^0.1.3"
+  },
+  "ace-builds": {
+  },
+  "purescript-console": {
+    "purescript-eff": "^0.1.2"
+  },
+  "purescript-eff": {
+    "purescript-prelude": "^0.1.0"
+  },
+  "purescript-prelude": {
+  },
+  "purescript-dom": {
+    "purescript-unsafe-coerce": "^0.1.0",
+    "purescript-enums": "^0.7.0",
+    "purescript-foreign": "^0.7.0",
+    "purescript-exceptions": "~0.3.0",
+    "purescript-nullable": "~0.2.1"
+  },
+  "purescript-unsafe-coerce": {
+  },
+  "purescript-enums": {
+    "purescript-either": "^0.2.0",
+    "purescript-strings": "^0.7.0",
+    "purescript-unfoldable": "^0.4.0"
+  },
+  "purescript-either": {
+    "purescript-foldable-traversable": "^0.4.0"
+  },
+  "purescript-foldable-traversable": {
+    "purescript-console": "^0.1.0",
+    "purescript-assert": "^0.1.0",
+    "purescript-functions": "~0.1.0",
+    "purescript-integers": "~0.2.1",
+    "purescript-math": "~0.2.0",
+    "purescript-bifunctors": "^0.4.0",
+    "purescript-maybe": "^0.3.0"
+  },
+  "purescript-assert": {
+    "purescript-eff": "^0.1.0"
+  },
+  "purescript-functions": {
+    "purescript-prelude": "^0.1.0"
+  },
+  "purescript-integers": {
+    "purescript-assert": "^0.1.0",
+    "purescript-console": "^0.1.0",
+    "purescript-maybe": "^0.3.0",
+    "purescript-math": "^0.2.0"
+  },
+  "purescript-maybe": {
+    "purescript-monoid": "^0.3.0"
+  },
+  "purescript-monoid": {
+    "purescript-control": "^0.3.0",
+    "purescript-invariant": "^0.3.0"
+  },
+  "purescript-control": {
+    "purescript-prelude": "^0.1.0"
+  },
+  "purescript-invariant": {
+    "purescript-prelude": "^0.1.0"
+  },
+  "purescript-math": {
+  },
+  "purescript-bifunctors": {
+    "purescript-control": "^0.3.0"
+  },
+  "purescript-strings": {
+    "purescript-assert": "~0.1.0",
+    "purescript-console": "~0.1.0",
+    "purescript-maybe": "^0.3.0"
+  },
+  "purescript-unfoldable": {
+    "purescript-console": "^0.1.0",
+    "purescript-assert": "^0.1.0",
+    "purescript-arrays": "^0.4.0",
+    "purescript-tuples": "^0.4.0"
+  },
+  "purescript-arrays": {
+    "purescript-assert": "^0.1.0",
+    "purescript-console": "^0.1.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-st": "^0.1.0",
+    "purescript-tuples": "^0.4.0"
+  },
+  "purescript-st": {
+    "purescript-eff": "^0.1.0"
+  },
+  "purescript-tuples": {
+    "purescript-foldable-traversable": "^0.4.0"
+  },
+  "purescript-foreign": {
+    "purescript-console": "^0.1.0",
+    "purescript-arrays": "^0.4.0",
+    "purescript-either": "^0.2.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-functions": "^0.1.0",
+    "purescript-integers": "^0.2.0",
+    "purescript-strings": "^0.7.0"
+  },
+  "purescript-exceptions": {
+    "purescript-eff": "^0.1.2",
+    "purescript-maybe": "^0.3.5"
+  },
+  "purescript-nullable": {
+    "purescript-maybe": "^0.3.0",
+    "purescript-functions": "^0.1.0"
+  },
+  "purescript-ace-halogen": {
+    "purescript-halogen": "^0.5.6",
+    "purescript-refs": "^0.2.0",
+    "purescript-datetime": "^0.9.1",
+    "purescript-random": "^0.2.3",
+    "purescript-ace": "~0.10.0"
+  },
+  "purescript-halogen": {
+    "purescript-aff-coroutines": "^0.4.0",
+    "purescript-const": "^0.5.0",
+    "purescript-dom": "^0.2.6",
+    "purescript-foreign": "^0.7.0",
+    "purescript-free": "^0.9.0",
+    "purescript-inject": "^0.3.0",
+    "purescript-maps": "^0.5.0",
+    "purescript-nullable": "^0.2.0",
+    "purescript-profunctor": "^0.3.1",
+    "purescript-stalling-coroutines": "^0.1.0",
+    "purescript-unsafe-coerce": "^0.1.0",
+    "purescript-void": "^0.3.0"
+  },
+  "purescript-aff-coroutines": {
+    "purescript-aff": "^0.13.0",
+    "purescript-coroutines": "^0.5.0"
+  },
+  "purescript-aff": {
+    "purescript-console": "^0.1.0",
+    "purescript-exceptions": "^0.3.0",
+    "purescript-functions": "^0.1.0",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-transformers": {
+    "purescript-console": "^0.1.0",
+    "purescript-distributive": "^0.5.0",
+    "purescript-lazy": "^0.4.0",
+    "purescript-tailrec": "^0.3.0",
+    "purescript-unfoldable": "^0.4.0"
+  },
+  "purescript-distributive": {
+    "purescript-identity": "^0.4.0"
+  },
+  "purescript-identity": {
+    "purescript-foldable-traversable": "^0.4.0"
+  },
+  "purescript-lazy": {
+    "purescript-monoid": "^0.3.0"
+  },
+  "purescript-tailrec": {
+    "purescript-console": "^0.1.0",
+    "purescript-identity": "^0.4.0",
+    "purescript-either": "^0.2.0",
+    "purescript-st": "^0.1.0"
+  },
+  "purescript-coroutines": {
+    "purescript-freet": "^0.3.0",
+    "purescript-profunctor": "^0.3.1"
+  },
+  "purescript-freet": {
+    "purescript-console": "^0.1.0",
+    "purescript-control": "~0.3.0",
+    "purescript-tailrec": "~0.3.0",
+    "purescript-transformers": "~0.8.1",
+    "purescript-exists": "~0.2.0"
+  },
+  "purescript-exists": {
+  },
+  "purescript-profunctor": {
+    "purescript-either": "^0.2.0",
+    "purescript-tuples": "^0.4.0"
+  },
+  "purescript-const": {
+    "purescript-contravariant": "^0.2.0",
+    "purescript-foldable-traversable": "^0.4.0"
+  },
+  "purescript-contravariant": {
+    "purescript-either": "~0.2.2",
+    "purescript-functions": "^0.1.0",
+    "purescript-monoid": "^0.3.0",
+    "purescript-tuples": "~0.4.0"
+  },
+  "purescript-free": {
+    "purescript-console": "^0.1.1",
+    "purescript-catenable-lists": "^0.1.0",
+    "purescript-exists": "^0.2.0",
+    "purescript-inject": "^0.3.0",
+    "purescript-transformers": "^0.8.1",
+    "purescript-unsafe-coerce": "^0.1.0"
+  },
+  "purescript-catenable-lists": {
+    "purescript-assert": "^0.1.1",
+    "purescript-benchotron": "^3.0.3",
+    "purescript-console": "^0.1.0",
+    "purescript-quickcheck": "^0.12.1",
+    "purescript-sequences": "^0.4.2",
+    "purescript-lists": "^0.7.7",
+    "purescript-tuples": "^0.4.0"
+  },
+  "purescript-benchotron": {
+    "purescript-arrays": "~0.4.3",
+    "purescript-exists": "~0.2.0",
+    "purescript-identity": "~0.4.1",
+    "purescript-profunctor": "~0.3.1",
+    "purescript-strings": "~0.7.0",
+    "purescript-quickcheck": "~0.12.0",
+    "purescript-transformers": "~0.8.2",
+    "purescript-foldable-traversable": "~0.4.1",
+    "purescript-exceptions": "~0.3.1",
+    "purescript-node-fs": "~0.9.1",
+    "purescript-node-buffer": "~0.2.0",
+    "purescript-node-readline": "~0.3.1",
+    "purescript-datetime": "~0.9.0"
+  },
+  "purescript-quickcheck": {
+    "purescript-console": "^0.1.0",
+    "purescript-either": "^0.2.0",
+    "purescript-exceptions": "^0.3.0",
+    "purescript-lists": "^0.7.0",
+    "purescript-random": "^0.2.0",
+    "purescript-strings": "^0.7.0",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-lists": {
+    "purescript-assert": "^0.1.0",
+    "purescript-console": "^0.1.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-lazy": "^0.4.0",
+    "purescript-unfoldable": "^0.4.0"
+  },
+  "purescript-random": {
+    "purescript-eff": "^0.1.0",
+    "purescript-integers": "^0.2.1",
+    "purescript-math": "^0.2.0"
+  },
+  "purescript-node-fs": {
+    "purescript-console": "~0.1.1",
+    "purescript-datetime": "^0.9.0",
+    "purescript-foreign": "^0.7.0",
+    "purescript-node-buffer": "^0.2.0",
+    "purescript-node-path": "^0.4.0",
+    "purescript-unsafe-coerce": "^0.1.0",
+    "purescript-nullable": "~0.2.1",
+    "purescript-node-streams": "~0.3.0",
+    "purescript-exceptions": "~0.3.3"
+  },
+  "purescript-datetime": {
+    "purescript-enums": "^0.7.0",
+    "purescript-functions": "^0.1.0",
+    "purescript-globals": "^0.2.0"
+  },
+  "purescript-globals": {
+  },
+  "purescript-node-buffer": {
+    "purescript-assert": "~0.1.1",
+    "purescript-console": "~0.1.1",
+    "purescript-foldable-traversable": "~0.4.1",
+    "purescript-eff": "~0.1.0",
+    "purescript-maybe": "~0.3.1"
+  },
+  "purescript-node-path": {
+  },
+  "purescript-node-streams": {
+    "purescript-console": "^0.1.0",
+    "purescript-assert": "~0.1.1",
+    "purescript-eff": "~0.1.1",
+    "purescript-node-buffer": "~0.2.0",
+    "purescript-prelude": "~0.1.2",
+    "purescript-either": "~0.2.3",
+    "purescript-exceptions": "~0.3.3"
+  },
+  "purescript-node-readline": {
+    "purescript-console": "^0.1.0"
+  },
+  "purescript-sequences": {
+    "purescript-quickcheck": "^0.12.0",
+    "purescript-benchotron": "^3.0.3",
+    "purescript-lazy": "^0.4.0",
+    "purescript-arrays": "^0.4.0",
+    "purescript-maybe": "^0.3.1",
+    "purescript-tuples": "^0.4.0",
+    "purescript-monoid": "^0.3.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-unfoldable": "^0.4.0",
+    "purescript-control": "^0.3.0",
+    "purescript-identity": "^0.4.0",
+    "purescript-profunctor": "^0.3.0",
+    "purescript-unsafe-coerce": "^0.1.0",
+    "purescript-exceptions": "^0.3.1"
+  },
+  "purescript-inject": {
+    "purescript-coproducts": "^0.4.0"
+  },
+  "purescript-coproducts": {
+    "purescript-either": "^0.2.0"
+  },
+  "purescript-maps": {
+    "purescript-quickcheck": "^0.12.0",
+    "purescript-lists": "^0.7.0",
+    "purescript-st": "^0.1.0",
+    "purescript-functions": "^0.1.0"
+  },
+  "purescript-stalling-coroutines": {
+    "purescript-console": "^0.1.0",
+    "purescript-coroutines": "^0.5.0",
+    "purescript-freet": "^0.3.0",
+    "purescript-tailrec": "^0.3.1",
+    "purescript-transformers": "^0.8.2"
+  },
+  "purescript-void": {
+    "purescript-contravariant": "^0.2.0"
+  },
+  "purescript-refs": {
+    "purescript-eff": "^0.1.0"
+  },
+  "purescript-affjax": {
+    "purescript-console": "^0.1.0",
+    "purescript-aff": "^0.13.0",
+    "purescript-argonaut-core": "^0.2.0",
+    "purescript-arraybuffer-types": "^0.2.0",
+    "purescript-dom": "^0.2.0",
+    "purescript-foreign": "^0.7.0",
+    "purescript-integers": "^0.2.0",
+    "purescript-math": "^0.2.0",
+    "purescript-nullable": "^0.2.0",
+    "purescript-refs": "^0.2.0",
+    "purescript-unsafe-coerce": "^0.1.0"
+  },
+  "purescript-argonaut-core": {
+    "purescript-strongcheck": "^0.14.0",
+    "purescript-enums": "^0.7.0",
+    "purescript-functions": "^0.1.0",
+    "purescript-maps": "^0.5.0"
+  },
+  "purescript-strongcheck": {
+    "purescript-console": "^0.1.0",
+    "purescript-enums": "^0.7.0",
+    "purescript-exceptions": "^0.3.0",
+    "purescript-free": "^0.9.0",
+    "purescript-machines": "^0.8.0",
+    "purescript-random": "^0.2.1"
+  },
+  "purescript-machines": {
+    "purescript-eff": "~0.1.0",
+    "purescript-maybe": "~0.3.2",
+    "purescript-monoid": "~0.3.0",
+    "purescript-profunctor": "~0.3.0",
+    "purescript-tuples": "~0.4.0",
+    "purescript-arrays": "~0.4.0",
+    "purescript-arrows": "~0.6.0",
+    "purescript-prelude": "~0.1.0",
+    "purescript-lists": "~0.7.0"
+  },
+  "purescript-arrows": {
+    "purescript-prelude": "^0.1.0",
+    "purescript-profunctor": "^0.3.0"
+  },
+  "purescript-arraybuffer-types": {
+  },
+  "purescript-aff-reattempt": {
+    "purescript-test-unit": "^3.0.0",
+    "purescript-aff": "^0.13.0",
+    "purescript-refs": "^0.2.0"
+  },
+  "purescript-test-unit": {
+    "purescript-transformers": "^0.8.1",
+    "purescript-refs": "^0.2.0"
+  },
+  "purescript-ajax": {
+    "purescript-quickcheck": "*",
+    "purescript-arrays": "~0.1.2",
+    "purescript-either": "~0.1.1",
+    "purescript-http": "~0.1.0"
+  },
+  "purescript-http": {
+    "purescript-maybe": "~0.3.2"
+  },
+  "purescript-algebra": {
+  },
+  "purescript-angle": {
+    "purescript-math": "~0.1.0"
+  },
+  "purescript-angular": {
+    "angular": "1.2.26",
+    "todomvc-common": "0.1.9",
+    "purescript-strings": "~0.4.1",
+    "purescript-control": "~0.2.1",
+    "purescript-free": "~0.2.0",
+    "purescript-foreign": "~0.3.0",
+    "purescript-arrays": "~0.3.0",
+    "purescript-either": "~0.1.4",
+    "purescript-exceptions": "~0.2.2",
+    "purescript-foldable-traversable": "~0.2.1",
+    "purescript-maybe": "~0.2.1",
+    "purescript-transformers": "~0.4.0",
+    "purescript-tuples": "~0.2.2",
+    "purescript-simple-dom": "aktowns/purescript-simple-dom#2b6f81d9fe9e161b8ffc3a3885483c8859a475a8"
+  },
+  "angular": {
+  },
+  "todomvc-common": {
+  },
+  "purescript-simple-dom": {
+    "purescript-math": "^0.2.0",
+    "purescript-quickcheck": "^0.6.0",
+    "purescript-dom": "^0.2.8",
+    "purescript-arrays": "^0.4.3",
+    "purescript-maybe": "^0.3.4",
+    "purescript-foldable-traversable": "^0.4.1",
+    "purescript-tuples": "^0.4.0",
+    "purescript-strings": "^0.7.0",
+    "purescript-sets": "^0.5.2"
+  },
+  "purescript-sets": {
+    "purescript-assert": "~0.1.1",
+    "purescript-console": "~0.1.1",
+    "purescript-maps": "^0.5.0",
+    "purescript-tailrec": "^0.3.1"
+  },
+  "purescript-ansi": {
+    "purescript-console": "~0.1.1",
+    "purescript-strings": "~0.7.1"
+  },
+  "purescript-argonaut": {
+    "purescript-console": "^0.1.0",
+    "purescript-strongcheck": "^0.14.3",
+    "purescript-argonaut-traversals": "^0.6.0",
+    "purescript-argonaut-core": "^0.2.1",
+    "purescript-argonaut-codecs": "^0.5.0"
+  },
+  "purescript-argonaut-traversals": {
+    "purescript-strongcheck": "^0.14.3",
+    "purescript-argonaut-codecs": "^0.5.0",
+    "purescript-profunctor-lenses": "^0.3.3"
+  },
+  "purescript-argonaut-codecs": {
+    "purescript-strongcheck-generics": "^0.3.0",
+    "purescript-argonaut-core": "^0.2.0",
+    "purescript-generics": "^0.7.0",
+    "purescript-integers": "^0.2.1"
+  },
+  "purescript-strongcheck-generics": {
+    "purescript-console": "^0.1.1",
+    "purescript-generics": "~0.7.0",
+    "purescript-strongcheck": "~0.14.4"
+  },
+  "purescript-generics": {
+    "purescript-console": "^0.1.0",
+    "purescript-arrays": "^0.4.2",
+    "purescript-either": "^0.2.1",
+    "purescript-proxy": "^0.1.0",
+    "purescript-strings": "^0.7.0"
+  },
+  "purescript-proxy": {
+  },
+  "purescript-profunctor-lenses": {
+    "purescript-console": "^0.1.0",
+    "purescript-const": "~0.5.0",
+    "purescript-coproducts": "~0.4.0",
+    "purescript-functors": "~0.1.0",
+    "purescript-identity": "~0.4.0",
+    "purescript-lists": "~0.7.0",
+    "purescript-maps": "~0.5.2",
+    "purescript-profunctor": "~0.3.0",
+    "purescript-sets": "~0.5.1",
+    "purescript-unsafe-coerce": "~0.1.0"
+  },
+  "purescript-functors": {
+    "purescript-prelude": "~0.1.2",
+    "purescript-foldable-traversable": "~0.4.0",
+    "purescript-tuples": "~0.4.0"
+  },
+  "purescript-arraybuffer": {
+    "purescript-debug": "~0.1.2",
+    "purescript-quickcheck": "~0.12.0",
+    "purescript-functions": "~0.1.0",
+    "purescript-arraybuffer-types": "~0.2.0",
+    "purescript-maybe": "~0.3.4"
+  },
+  "purescript-debug": {
+    "purescript-eff": "^0.1.0",
+    "purescript-prelude": "^0.1.0"
+  },
+  "purescript-asap": {
+  },
+  "purescript-assertion-error": {
+    "purescript-maybe": "~0.2.1",
+    "purescript-exceptions": "~0.2.2"
+  },
+  "purescript-automata": {
+    "purescript-sets": "~0.2.0",
+    "purescript-validation": "~0.0.3",
+    "purescript-foldable-traversable": "~0.2.1"
+  },
+  "purescript-validation": {
+    "purescript-control": "^0.3.0"
+  },
+  "purescript-aws": {
+    "purescript-quickcheck": "*",
+    "purescript-foreign": "*",
+    "purescript-parallel": "*",
+    "purescript-strings": "*"
+  },
+  "purescript-parallel": {
+    "purescript-console": "^0.1.0",
+    "purescript-refs": "^0.2.0",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-base": {
+    "purescript-arrays": "^0.4.2",
+    "purescript-control": "^0.3.0",
+    "purescript-either": "^0.2.2",
+    "purescript-enums": "^0.7.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-lists": "^0.7.4",
+    "purescript-math": "^0.2.0",
+    "purescript-maybe": "^0.3.4",
+    "purescript-monoid": "^0.3.0",
+    "purescript-strings": "^0.7.0",
+    "purescript-tuples": "^0.4.0",
+    "purescript-console": "^0.1.1",
+    "purescript-unfoldable": "^0.4.0",
+    "purescript-integers": "^0.2.1"
+  },
+  "purescript-batteries": {
+    "purescript-aff": "~0.13.0",
+    "purescript-arrays": "~0.4.4",
+    "purescript-arrows": "~0.6.2",
+    "purescript-assert": "~0.1.1",
+    "purescript-bifunctors": "~0.4.0",
+    "purescript-catenable-lists": "~0.1.1",
+    "purescript-console": "~0.1.1",
+    "purescript-const": "~0.5.0",
+    "purescript-contravariant": "~0.2.3",
+    "purescript-control": "~0.3.2",
+    "purescript-coproducts": "~0.4.0",
+    "purescript-datetime": "~0.9.1",
+    "purescript-distributive": "~0.5.1",
+    "purescript-eff": "~0.1.2",
+    "purescript-either": "~0.2.3",
+    "purescript-enums": "~0.7.0",
+    "purescript-exceptions": "~0.3.3",
+    "purescript-exists": "~0.2.0",
+    "purescript-foldable-traversable": "~0.4.2",
+    "purescript-foreign": "~0.7.2",
+    "purescript-free": "~0.9.0",
+    "purescript-functions": "~0.1.0",
+    "purescript-generics": "~0.6.2",
+    "purescript-globals": "~0.2.2",
+    "purescript-identity": "~0.4.1",
+    "purescript-inject": "~0.3.0",
+    "purescript-integers": "~0.2.1",
+    "purescript-invariant": "~0.3.0",
+    "purescript-lazy": "~0.4.0",
+    "purescript-lens": "~0.9.1",
+    "purescript-lists": "~0.7.7",
+    "purescript-maps": "~0.5.4",
+    "purescript-math": "~0.2.0",
+    "purescript-maybe": "~0.3.5",
+    "purescript-monoid": "~0.3.2",
+    "purescript-nullable": "~0.2.1",
+    "purescript-orders": "~0.1.1",
+    "purescript-parallel": "~0.5.1",
+    "purescript-prelude": "~0.1.3",
+    "purescript-profunctor": "~0.3.1",
+    "purescript-proxy": "~0.1.0",
+    "purescript-random": "~0.2.3",
+    "purescript-refs": "~0.2.0",
+    "purescript-semirings": "~0.2.0",
+    "purescript-sequences": "~0.4.2",
+    "purescript-sets": "~0.5.3",
+    "purescript-st": "~0.1.1",
+    "purescript-strings": "~0.7.1",
+    "purescript-tailrec": "~0.3.1",
+    "purescript-these": "~0.3.3",
+    "purescript-transformers": "~0.8.2",
+    "purescript-tuples": "~0.4.0",
+    "purescript-unfoldable": "~0.4.1",
+    "purescript-unsafe-coerce": "~0.1.0",
+    "purescript-validation": "~0.2.1"
+  },
+  "purescript-lens": {
+    "purescript-console": "~0.1.0",
+    "purescript-const": "^0.5.0",
+    "purescript-distributive": "^0.5.1",
+    "purescript-profunctor": "^0.3.0"
+  },
+  "purescript-orders": {
+  },
+  "purescript-semirings": {
+    "purescript-lists": "^0.7.0"
+  },
+  "purescript-these": {
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-tuples": "^0.4.0"
+  },
+  "purescript-bcrypt": {
+    "purescript-spec": "~0.7.1",
+    "purescript-console": "^0.1.0",
+    "bcryptjs": "~2.2.0"
+  },
+  "purescript-spec": {
+    "purescript-console": ">=0.1.0",
+    "purescript-aff": ">=0.13.0",
+    "purescript-exceptions": ">=0.3.0",
+    "purescript-strings": ">=0.7.0",
+    "purescript-prelude": ">=0.1.2",
+    "purescript-transformers": "~0.8.2"
+  },
+  "bcryptjs": {
+  },
+  "purescript-bigints": {
+    "purescript-integers": "^0.2.1",
+    "purescript-console": "^0.1.0",
+    "purescript-assert": "^0.1.1",
+    "purescript-quickcheck": "^0.11.0",
+    "purescript-maybe": "^0.3.2"
+  },
+  "purescript-browserfeatures": {
+    "purescript-base": "^0.2.0",
+    "purescript-exceptions": "^0.3.0",
+    "purescript-prelude": "^0.1.2",
+    "purescript-dom": "^0.2.6",
+    "purescript-maps": "^0.5.0",
+    "purescript-refs": "^0.2.0"
+  },
+  "purescript-browser-sniffer": {
+    "purescript-mocha": "*",
+    "purescript-chai": "*",
+    "purescript-debug-foreign": "*",
+    "purescript-arrays": "~0.2.1",
+    "purescript-foldable-traversable": "~0.1.4",
+    "purescript-strings": "~0.4.1"
+  },
+  "purescript-mocha": {
+    "mocha": "~1.21.4",
+    "purescript-oo-ffi": "~0.0.4",
+    "purescript-context": "~0.0.3",
+    "purescript-maybe": "~0.2.2",
+    "purescript-strings": "~0.4.5"
+  },
+  "mocha": {
+  },
+  "purescript-oo-ffi": {
+    "purescript-aff": "^0.11.3",
+    "purescript-random": "^0.2.2",
+    "purescript-spec": "^0.7.1",
+    "purescript-spec-quickcheck": "^0.3.0",
+    "purescript-control": "^0.3.0",
+    "purescript-eff": "^0.1.0",
+    "purescript-functions": "^0.1.0",
+    "purescript-context": "^1.0.0"
+  },
+  "purescript-spec-quickcheck": {
+    "purescript-aff": "^0.11.0",
+    "purescript-random": "^0.2.0",
+    "purescript-quickcheck": "^0.9.0",
+    "purescript-spec": "^0.7.0"
+  },
+  "purescript-context": {
+  },
+  "purescript-chai": {
+    "purescript-easy-ffi": "~1.0.1",
+    "chai": "~1.10.0"
+  },
+  "purescript-easy-ffi": {
+    "purescript-arrays": "^0.4.0",
+    "purescript-console": "^0.1.0",
+    "purescript-quickcheck": "^0.6.0",
+    "purescript-prelude": "^0.1.0"
+  },
+  "chai": {
+  },
+  "purescript-debug-foreign": {
+  },
+  "purescript-c3": {
+    "c3": "~0.2.4",
+    "d3": "~3.4.8",
+    "purescript-dom": "~0.1.0"
+  },
+  "c3": {
+  },
+  "d3": {
+  },
+  "purescript-canvas": {
+    "purescript-eff": "^0.1.0",
+    "purescript-functions": "^0.1.0",
+    "purescript-maybe": "^0.3.0",
+    "purescript-exceptions": "^0.3.1",
+    "purescript-arraybuffer-types": "^0.2.0"
+  },
+  "purescript-chalk": {
+    "chalk": "~0.5.1"
+  },
+  "chalk": {
+  },
+  "purescript-chalky": {
+  },
+  "purescript-channels": {
+    "purescript-transformers": "~0.6.1",
+    "purescript-lazy": "~0.4.0",
+    "purescript-unsafe-coerce": "~0.1.0",
+    "purescript-lists": "~0.7.0",
+    "purescript-profunctor": "~0.3.0"
+  },
+  "purescript-chartjs": {
+    "purescript-foldable-traversable": "~0.2.1",
+    "purescript-exceptions": "~0.2.2",
+    "purescript-jquery": "~0.3.0",
+    "jquery": "~2.1.3",
+    "chartjs": "~1.0.1",
+    "purescript-canvas": "~0.2.0",
+    "purescript-dom": "~0.1.1"
+  },
+  "purescript-jquery": {
+    "purescript-dom": "~0.2.6",
+    "purescript-eff": "~0.1.0",
+    "purescript-foreign": "~0.7.0"
+  },
+  "jquery": {
+  },
+  "chartjs": {
+  },
+  "purescript-chosen": {
+    "purescript-jquery": "^0.6.0",
+    "chosen": "^1.4.2",
+    "purescript-aff": "~0.13.0"
+  },
+  "chosen": {
+  },
+  "purescript-chosen-halogen": {
+    "purescript-console": "^0.1.0",
+    "purescript-halogen": "*",
+    "purescript-chosen": "~0.2.5"
+  },
+  "purescript-client-ajax": {
+    "purescript-jquery": "*",
+    "purescript-transformers": "*"
+  },
+  "purescript-client-routing": {
+    "director": "~1.2.8",
+    "purescript-strings": "~0.4.2",
+    "purescript-arrays": "~0.3.0",
+    "purescript-monad-eff": "~0.1.0"
+  },
+  "director": {
+  },
+  "purescript-monad-eff": {
+  },
+  "purescript-complex": {
+    "purescript-math": "~0.2.0",
+    "purescript-prelude": "~0.1.2",
+    "purescript-quickcheck": "~0.12.0"
+  },
+  "purescript-concurrent": {
+    "purescript-transformers": "~0.4.0",
+    "purescript-refs": "~0.1.2"
+  },
+  "purescript-cons": {
+    "purescript-arrays": "~0.2.1",
+    "purescript-either": "~0.1.4",
+    "purescript-maybe": "~0.2.1",
+    "purescript-tuples": "~0.2.2",
+    "purescript-lens": "~0.3.2"
+  },
+  "purescript-control-monad-loop": {
+  },
+  "purescript-cookies": {
+    "purescript-eff": "latest",
+    "purescript-maybe": "~0.3.5"
+  },
+  "purescript-css": {
+    "purescript-exceptions": "^0.3.0",
+    "purescript-generics": "^0.7.0",
+    "purescript-nonempty": "^0.1.2",
+    "purescript-profunctor": "^0.3.1",
+    "purescript-strings": "^0.7.0",
+    "purescript-these": "^0.3.0",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-nonempty": {
+    "purescript-console": "^0.1.0",
+    "purescript-foldable-traversable": "^0.4.0"
+  },
+  "purescript-d3": {
+    "d3": "^3.4.9",
+    "purescript-datetime": "^0.9.0",
+    "purescript-easy-ffi": "^1.0.2",
+    "purescript-foreign": "^0.7.0"
+  },
+  "purescript-data-default": {
+  },
+  "purescript-debugger": {
+    "purescript-console": "^0.1.0",
+    "purescript-node-readline": "~0.3.1",
+    "purescript-lists": "~0.7.1",
+    "purescript-either": "~0.2.0",
+    "purescript-tuples": "~0.4.0"
+  },
+  "purescript-difflists": {
+    "purescript-quickcheck": "~0.12.1",
+    "purescript-benchotron": "~3.0.3",
+    "purescript-sequences": "~0.4.2",
+    "purescript-arrays": "~0.4.3",
+    "purescript-monoid": "~0.3.2",
+    "purescript-foldable-traversable": "~0.4.2",
+    "purescript-functions": "~0.1.0",
+    "purescript-lists": "~0.7.7"
+  },
+  "purescript-dom-delegator": {
+    "purescript-timers": "~0.0.8",
+    "purescript-dom": "~0.1.1"
+  },
+  "purescript-timers": {
+    "purescript-console": "~0.1.0",
+    "purescript-exceptions": "~0.3.0",
+    "purescript-spec": "~0.7.1",
+    "purescript-eff": "~0.1.0",
+    "purescript-prelude": "~0.1.1"
+  },
+  "purescript-dom-keyboard": {
+    "purescript-arrays": "~0.4.3",
+    "purescript-control": "~0.3.2",
+    "purescript-dom": "~0.2.11",
+    "purescript-exceptions": "~0.3.2",
+    "purescript-foreign": "~0.7.2",
+    "purescript-refs": "~0.2.0",
+    "purescript-sets": "~0.5.3",
+    "purescript-strings": "~0.7.1"
+  },
+  "purescript-domparser": {
+    "purescript-mocha": "~0.0.2",
+    "purescript-chai": "*",
+    "purescript-debug-foreign": "~0.0.3",
+    "purescript-mime": "~0.0.2",
+    "purescript-oo-ffi": "~0.0.5",
+    "purescript-dom": "~0.1.1"
+  },
+  "purescript-mime": {
+  },
+  "purescript-drawing": {
+    "purescript-canvas": "~0.3.1",
+    "purescript-lists": "~0.7.1",
+    "purescript-math": "~0.2.0",
+    "purescript-integers": "~0.2.1"
+  },
+  "purescript-each": {
+    "purescript-arrays": "~0.2.1",
+    "purescript-either": "~0.1.3",
+    "purescript-maybe": "~0.2.1",
+    "purescript-tuples": "~0.2.1"
+  },
+  "purescript-easyimage": {
+    "purescript-aff": "^0.13.0"
+  },
+  "purescript-echarts": {
+    "purescript-console": "^0.1.1",
+    "purescript-random": "^0.2.0",
+    "purescript-signal": "^4.1.0",
+    "echarts": "~2.1.10",
+    "purescript-argonaut-codecs": "^0.2.0",
+    "purescript-argonaut-core": "^0.2.0",
+    "purescript-datetime": "^0.9.0",
+    "purescript-dom": "^0.2.6",
+    "purescript-globals": "^0.2.0"
+  },
+  "purescript-signal": {
+    "purescript-functions": "~0.1.0",
+    "purescript-test-unit": "~3.0.0",
+    "purescript-lists": "~0.7.7",
+    "purescript-dom": "~0.2.9",
+    "purescript-refs": "~0.2.0",
+    "purescript-prelude": "~0.1.3",
+    "purescript-foldable-traversable": "~0.4.1",
+    "purescript-maybe": "~0.3.5"
+  },
+  "echarts": {
+  },
+  "purescript-elm-basics": {
+    "purescript-debug": "~0.1.2",
+    "purescript-integers": "~0.2.1",
+    "purescript-console": "~0.1.1",
+    "purescript-math": "~0.2.0",
+    "purescript-prelude": "~0.1.3"
+  },
+  "purescript-elm-color": {
+    "purescript-console": "~0.1.1",
+    "purescript-tuples": "~0.4.0",
+    "purescript-elm-basics": "~0.2.0",
+    "purescript-integers": "~0.2.1"
+  },
+  "purescript-email-validate": {
+    "purescript-super-spec": "^0.8",
+    "purescript-generics": "^0.7",
+    "purescript-parsing": "^0.7",
+    "purescript-string-parsers": "^0.6",
+    "purescript-aff": "^0.13",
+    "purescript-transformers": "^0.8"
+  },
+  "purescript-super-spec": {
+    "purescript-console": "^0.1",
+    "purescript-aff": "^0.13",
+    "purescript-exceptions": "^0.3",
+    "purescript-strings": "^0.7",
+    "purescript-prelude": "^0.1",
+    "purescript-transformers": "^0.8",
+    "purescript-quickcheck": "^0.12",
+    "purescript-eff": "^0.1",
+    "purescript-random": "~0.2.3"
+  },
+  "purescript-parsing": {
+    "purescript-console": "^0.1.0",
+    "purescript-assert": "^0.1.0",
+    "purescript-arrays": "^0.4.0",
+    "purescript-either": "^0.2.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-identity": "^0.4.0",
+    "purescript-lists": "^0.7.0",
+    "purescript-maybe": "^0.3.0",
+    "purescript-strings": "~0.7.0",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-string-parsers": {
+    "purescript-math": "~0.2.0",
+    "purescript-quickcheck": "~0.12.0",
+    "purescript-control": "~0.3.1",
+    "purescript-arrays": "~0.4.2",
+    "purescript-maybe": "~0.3.4",
+    "purescript-strings": "~0.7.0",
+    "purescript-foldable-traversable": "~0.4.0"
+  },
+  "purescript-enchantjs": {
+    "purescript-math": "*",
+    "purescript-quickcheck": "*",
+    "purescript-arrays": "*",
+    "purescript-maybe": "*",
+    "purescript-foreign": "*",
+    "purescript-foldable-traversable": "*",
+    "purescript-easy-ffi": "*"
+  },
+  "purescript-errors": {
+    "purescript-test-unit": "^3.0.0",
+    "purescript-either": "~0.2.2",
+    "purescript-maybe": "~0.3.4",
+    "purescript-transformers": "~0.8.1"
+  },
+  "purescript-events": {
+    "purescript-mocha": "*",
+    "purescript-chai": "*",
+    "purescript-timers": "*",
+    "purescript-reactive": "*",
+    "purescript-context": "~0.0.3"
+  },
+  "purescript-reactive": {
+  },
+  "purescript-express": {
+    "purescript-console": "^0.1.1",
+    "purescript-maps": "^0.5.2",
+    "purescript-node-fs": "^0.8.1",
+    "purescript-test-unit": "^3.0.0",
+    "purescript-unsafe-coerce": "^0.1.0",
+    "purescript-aff": "^0.13.0",
+    "purescript-arrays": "^0.4.2",
+    "purescript-control": "^0.3.1",
+    "purescript-data-default": "^0.1.0",
+    "purescript-easy-ffi": "^1.0.2",
+    "purescript-eff": "^0.1.1",
+    "purescript-either": "^0.2.3",
+    "purescript-exceptions": "^0.3.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-foreign": "^0.7.0",
+    "purescript-lists": "^0.7.6",
+    "purescript-maybe": "^0.3.4",
+    "purescript-node-http": "^0.1.6",
+    "purescript-parsing": "^0.7.1",
+    "purescript-strings": "^0.7.0",
+    "purescript-transformers": "^0.8.1",
+    "purescript-unfoldable": "^0.4.1"
+  },
+  "purescript-node-http": {
+    "purescript-console": "^0.1.0",
+    "purescript-maps": "^0.5.0",
+    "purescript-node-streams": "^0.1.1",
+    "purescript-options": "~0.5.1",
+    "purescript-unsafe-coerce": "^0.1.0"
+  },
+  "purescript-options": {
+    "purescript-console": "~0.1.1",
+    "purescript-foreign": "~0.7.0",
+    "purescript-unsafe-coerce": "~0.1.0"
+  },
+  "purescript-extensions": {
+    "purescript-arrays": "",
+    "purescript-integers": "",
+    "purescript-math": ""
+  },
+  "purescript-flare": {
+    "purescript-dom": "^0.2.6",
+    "purescript-signal": "^4.2.0",
+    "purescript-foldable-traversable": "^0.4.1",
+    "purescript-canvas": "^0.3.4",
+    "purescript-drawing": "^0.3.7",
+    "purescript-smolder": "^3.0.1"
+  },
+  "purescript-smolder": {
+    "purescript-monoid": "~0.3.0",
+    "purescript-maps": "~0.4.2",
+    "purescript-strings": "~0.6.0"
+  },
+  "purescript-foreign-generic": {
+    "purescript-console": "^0.1.0",
+    "purescript-eff": "^0.1.2",
+    "purescript-exceptions": "~0.3.1",
+    "purescript-foreign": "~0.7.1",
+    "purescript-generics": "^0.7.0",
+    "purescript-globals": "~0.2.1",
+    "purescript-maps": "~0.5.2",
+    "purescript-nullable": "~0.2.1"
+  },
+  "purescript-foreign-lens": {
+    "purescript-const": "~0.5.0",
+    "purescript-contravariant": "~0.2.1",
+    "purescript-foreign": "~0.7.0"
+  },
+  "purescript-foreign-options": {
+    "purescript-maybe": "*",
+    "purescript-either": "*"
+  },
+  "purescript-freeap": {
+    "purescript-either": "~0.2.3",
+    "purescript-integers": "~0.2.1",
+    "purescript-generics": "~0.6.2",
+    "purescript-console": "~0.1.1",
+    "purescript-exists": "~0.2.0",
+    "purescript-const": "~0.5.0"
+  },
+  "purescript-free-canvas": {
+    "purescript-canvas": "^0.3.0",
+    "purescript-free": "^0.5.0"
+  },
+  "purescript-function-checked": {
+    "purescript-foreign": "*",
+    "purescript-either": "*",
+    "purescript-exceptions": "*"
+  },
+  "purescript-function-eff": {
+    "purescript-function-run": "~0.1.0"
+  },
+  "purescript-function-run": {
+  },
+  "purescript-functor-compose": {
+    "purescript-control": "^0.3.2",
+    "purescript-foldable-traversable": "^0.4.1"
+  },
+  "purescript-geom": {
+    "purescript-math": "~0.1.0",
+    "purescript-quickcheck": "~0.3.1",
+    "purescript-monoid": "~0.1.4"
+  },
+  "purescript-geometry": {
+    "purescript-mocha": "*",
+    "purescript-chai": "*",
+    "purescript-quickcheck": "*",
+    "purescript-math": "*"
+  },
+  "purescript-gm": {
+    "purescript-console": "^0.1.0",
+    "purescript-aff": "~0.13.0",
+    "purescript-node-buffer": "~0.1.0",
+    "purescript-node-fs": "~0.8.1"
+  },
+  "purescript-graphs": {
+    "purescript-sets": "^0.5.0"
+  },
+  "purescript-halogen-bootstrap": {
+    "bootstrap": "~3.3.2",
+    "purescript-halogen": "^0.5.0",
+    "purescript-prelude": "^0.1.2"
+  },
+  "bootstrap": {
+  },
+  "purescript-halogen-css": {
+    "purescript-css": "^0.5.2",
+    "purescript-halogen": "^0.5.3"
+  },
+  "purescript-halogen-dialog": {
+    "purescript-foldable-traversable": "~0.3.1",
+    "purescript-halogen": "~0.4.1",
+    "purescript-halogen-bootstrap": "~0.1.0"
+  },
+  "purescript-halogen-echarts": {
+    "purescript-generics": "^0.6.2",
+    "purescript-random": "^0.2.2",
+    "purescript-debug": "^0.1.2",
+    "purescript-halogen": "^0.5.3",
+    "purescript-echarts": "^0.4.0",
+    "purescript-halogen-css": "^0.1.1",
+    "purescript-datetime": "^0.9.0",
+    "purescript-refs": "^0.2.0",
+    "purescript-maps": "^0.5.2",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-halogen-foundation": {
+    "foundation": "~5.5.1",
+    "purescript-halogen": "~0.4.1"
+  },
+  "foundation": {
+  },
+  "purescript-halogen-menu": {
+    "purescript-generics": "^0.7.0",
+    "purescript-halogen": "^0.5.8"
+  },
+  "purescript-handlebars": {
+    "purescript-jquery": "~0.4.0",
+    "handlebars": "~2.0.0"
+  },
+  "handlebars": {
+  },
+  "purescript-handsontable": {
+    "handsontable": "0.18.0",
+    "purescript-console": "^0.1.1",
+    "purescript-dom": "^0.2.8"
+  },
+  "handsontable": {
+  },
+  "purescript-hashable": {
+  },
+  "purescript-history": {
+    "purescript-mocha": "*",
+    "purescript-chai": "*",
+    "purescript-timers": "*",
+    "purescript-easy-ffi": "~1.0.1",
+    "purescript-reactive": "*",
+    "purescript-events": "*"
+  },
+  "purescript-html": {
+    "purescript-simple-assert": "~0.2.1",
+    "purescript-pspec": "~0.6.0",
+    "purescript-timers": "~0.0.8",
+    "purescript-refs": "~0.1.2",
+    "purescript-dom-delegator": "~0.1.0",
+    "purescript-dom": "~0.1.1",
+    "purescript-strings": "~0.4.2",
+    "purescript-arrays": "~0.3.0"
+  },
+  "purescript-simple-assert": {
+    "purescript-control": "~0.3.0",
+    "purescript-eff": "~0.1.0",
+    "purescript-exceptions": "~0.3.0",
+    "purescript-foldable-traversable": "~0.4.0",
+    "purescript-functions": "~0.1.0",
+    "purescript-strings": "~0.5.3"
+  },
+  "purescript-pspec": {
+    "purescript-console": "~0.1.0",
+    "purescript-math": "~0.2.0",
+    "purescript-simple-assert": "~0.3.0",
+    "purescript-strongcheck": "~0.10.0",
+    "purescript-lists": "~0.7.0",
+    "purescript-sequences": "~0.4.1",
+    "purescript-strings": "~0.5.3",
+    "purescript-functions": "~0.1.0"
+  },
+  "purescript-imagediff": {
+    "purescript-aff": "^0.13.0",
+    "purescript-console": "^0.1.1",
+    "purescript-eff": "^0.1.0",
+    "purescript-maybe": "^0.3.4",
+    "purescript-prelude": "^0.1.2"
+  },
+  "purescript-incremental": {
+    "purescript-dom": "~0.2.6",
+    "purescript-maybe": "~0.3.4",
+    "purescript-eff": "~0.1.1",
+    "purescript-arrays": "~0.4.2",
+    "purescript-unsafe-coerce": "~0.1.0"
+  },
+  "purescript-index": {
+    "purescript-arrays": "^0.4.2",
+    "purescript-identity": "^0.4.0",
+    "purescript-maps": "^0.5.0",
+    "purescript-maybe": "^0.3.4",
+    "purescript-sets": "^0.5.0"
+  },
+  "purescript-indexed": {
+  },
+  "purescript-information": {
+    "purescript-math": "~0.1.0",
+    "purescript-probability": "~0.0.1",
+    "purescript-quickcheck": "~0.5.0"
+  },
+  "purescript-probability": {
+    "purescript-arrows": "~0.3.0",
+    "purescript-foldable-traversable": "~0.3.0",
+    "purescript-maps": "~0.3.2"
+  },
+  "purescript-in-purescript": {
+    "purescript-arrows": "~0.1.1",
+    "purescript-node-readline": "~0.1.1",
+    "purescript-refs": "~0.1.1",
+    "purescript-node-args": "~0.2.0",
+    "purescript-maps": "~0.0.7",
+    "purescript-transformers": "~0.2.1",
+    "purescript-pattern-arrows": "~0.1.0",
+    "purescript-parsing": "~0.1.1",
+    "purescript-globals": "~0.1.5",
+    "purescript-node-path": "~0.2.0",
+    "purescript-node-fs": "~0.1.2",
+    "purescript-control": "~0.2.1",
+    "purescript-strings": "~0.4.0"
+  },
+  "purescript-node-args": {
+  },
+  "purescript-pattern-arrows": {
+    "purescript-control": "~0.2.1",
+    "purescript-tuples": "~0.3.0",
+    "purescript-arrays": "~0.3.0",
+    "purescript-foldable-traversable": "~0.3.0",
+    "purescript-maybe": "~0.2.1",
+    "purescript-transformers": "~0.5.0",
+    "purescript-arrows": "~0.4.0"
+  },
+  "purescript-ips": {
+    "purescript-maybe": "~0.3.5"
+  },
+  "purescript-jquery-ajax": {
+    "purescript-jquery": "*",
+    "purescript-transformers": "*"
+  },
+  "purescript-json": {
+    "purescript-simple-assert": "~0.3.0",
+    "purescript-pspec": "~0.7.0",
+    "purescript-console": "~0.1.0",
+    "purescript-sets": "~0.4.0",
+    "purescript-maps": "~0.4.0",
+    "purescript-maybe": "~0.3.2",
+    "purescript-tuples": "~0.4.0",
+    "purescript-either": "~0.2.0",
+    "purescript-foldable-traversable": "~0.4.0",
+    "purescript-exceptions": "~0.3.0",
+    "purescript-integers": "~0.2.0"
+  },
+  "purescript-jtable": {
+    "purescript-strongcheck": "^0.14.5",
+    "purescript-argonaut-traversals": "^0.6.0",
+    "purescript-datetime": "^0.9.0",
+    "purescript-halogen": "^0.5.8",
+    "purescript-void": "^0.3.0",
+    "purescript-const": "^0.5.0"
+  },
+  "purescript-kefir": {
+    "purescript-simple-assert": "~0.2.1",
+    "purescript-pspec": "~0.6.0",
+    "purescript-refs": "~0.1.2",
+    "purescript-datetime": "~0.2.0",
+    "purescript-timers": "~0.0.8",
+    "purescript-foreign": "~0.3.0",
+    "purescript-maybe": "~0.2.1",
+    "purescript-either": "~0.1.4",
+    "purescript-dom": "~0.1.1"
+  },
+  "purescript-keys": {
+    "purescript-sets": "~0.5.3",
+    "purescript-control": "~0.3.2",
+    "purescript-dom": "~0.2.10",
+    "purescript-eff": "~0.1.2",
+    "purescript-foldable-traversable": "~0.4.1",
+    "purescript-strings": "~0.7.1"
+  },
+  "purescript-knockoutjs": {
+    "purescript-foreign": "~0.4.2",
+    "purescript-globals": "~0.1.6"
+  },
+  "purescript-leaflet": {
+    "L.GeoSearch": "*",
+    "Leaflet.awesome-markers": "*",
+    "leaflet": "*",
+    "purescript-eff": "*"
+  },
+  "L.GeoSearch": {
+  },
+  "Leaflet.awesome-markers": {
+  },
+  "leaflet": {
+  },
+  "purescript-leibniz": {
+    "purescript-prelude": "~0.1.2",
+    "purescript-unsafe-coerce": "~0.1.0"
+  },
+  "purescript-list-zipper": {
+    "purescript-console": "~0.1.0",
+    "purescript-quickcheck": "~0.6.0",
+    "purescript-quickcheck-laws": "*",
+    "purescript-lists": "~0.7.0",
+    "purescript-functor-compose": "~0.0.0"
+  },
+  "purescript-quickcheck-laws": {
+    "purescript-proxy": "^0.1.0",
+    "purescript-quickcheck": "^0.12.0"
+  },
+  "purescript-location": {
+    "purescript-eff": "^0.1"
+  },
+  "purescript-markdown": {
+    "purescript-functions": "^0.1.0",
+    "purescript-parsing": "^0.7.1",
+    "purescript-prelude": "^0.1.3",
+    "purescript-strongcheck": "^0.14.4",
+    "purescript-validation": "^0.2.1"
+  },
+  "purescript-markdown-halogen": {
+    "purescript-browserfeatures": "^0.4.1",
+    "purescript-halogen": "^0.5.8",
+    "purescript-markdown": "^1.11.0",
+    "purescript-prelude": "^0.1.2",
+    "purescript-sets": "^0.5.0",
+    "purescript-strongcheck": "^0.14.4",
+    "purescript-validation": "^0.2.0"
+  },
+  "purescript-matrix": {
+    "purescript-assert": "*",
+    "purescript-console": "*",
+    "purescript-benchotron": "*",
+    "purescript-random": "*",
+    "purescript-vector": "*",
+    "purescript-arrays": "*",
+    "purescript-extensions": "*",
+    "purescript-proxy": "*"
+  },
+  "purescript-vector": {
+    "purescript-assert": "*",
+    "purescript-console": "*",
+    "purescript-benchotron": "*",
+    "purescript-random": "*",
+    "purescript-prelude": "*",
+    "purescript-either": "*",
+    "purescript-arrays": "*",
+    "purescript-foldable-traversable": "*",
+    "purescript-math": "*",
+    "purescript-extensions": "*",
+    "purescript-proxy": "*"
+  },
+  "purescript-minimatch": {
+  },
+  "purescript-mmorph": {
+    "purescript-transformers": "~0.8.1",
+    "purescript-functor-compose": "~0.0.0",
+    "purescript-functors": "~0.1.0"
+  },
+  "purescript-moment": {
+    "purescript-debug-foreign": "*",
+    "moment": "~2.8.3",
+    "purescript-oo-ffi": "~0.0.1",
+    "purescript-maybe": "~0.2.1",
+    "purescript-enums": "~0.2.0",
+    "purescript-foldable-traversable": "~0.1.3"
+  },
+  "moment": {
+  },
+  "purescript-monad-logger-writer": {
+    "purescript-super-spec": "^0.8",
+    "purescript-console": "^0.1",
+    "purescript-refs": "^0.2",
+    "purescript-eff": "^0.1",
+    "purescript-monoid": "^0.3",
+    "purescript-tuples": "^0.4",
+    "purescript-prelude": "^0.1"
+  },
+  "purescript-monadplus-partial": {
+    "purescript-prelude": "~0.1.0",
+    "purescript-control": "~0.3.0",
+    "purescript-foldable-traversable": "~0.4.0",
+    "purescript-either": "~0.2.0",
+    "purescript-maybe": "~0.3.0",
+    "purescript-tuples": "~0.4.0"
+  },
+  "purescript-monad-supply": {
+    "purescript-super-spec": "^0.8",
+    "purescript-console": "^0.1",
+    "purescript-prelude": "^0.1",
+    "purescript-transformers": "^0.8.0"
+  },
+  "purescript-mongodbf": {
+    "purescript-foreign": "~0.4.0",
+    "purescript-free": "~0.3.0"
+  },
+  "purescript-mustache": {
+    "purescript-console": "^0.1.0",
+    "purescript-maps": "^0.4.2",
+    "mustache": "^2.1.3"
+  },
+  "mustache": {
+  },
+  "purescript-navigator": {
+  },
+  "purescript-neon": {
+  },
+  "purescript-node-child-process": {
+    "purescript-console": "~0.1.1",
+    "purescript-functions": "~0.1.0",
+    "purescript-node-streams": "~0.3.0",
+    "purescript-foreign": "~0.7.2",
+    "purescript-maps": "~0.5.3",
+    "purescript-nullable": "~0.2.1",
+    "purescript-unsafe-coerce": "~0.1.0",
+    "purescript-node-fs": "~0.9.2",
+    "purescript-posix-types": "~0.1.1",
+    "purescript-exceptions": "~0.3.4"
+  },
+  "purescript-posix-types": {
+    "purescript-console": "~0.1.1",
+    "purescript-prelude": "~0.1.3",
+    "purescript-functions": "~0.1.0",
+    "purescript-maybe": "~0.3.5"
+  },
+  "purescript-node-datagrams": {
+    "purescript-aff": "~0.12.0",
+    "purescript-console": "^0.1.0",
+    "purescript-exceptions": "~0.3.0",
+    "purescript-functions": "~0.1.0",
+    "purescript-node-buffer": "~0.1.0",
+    "purescript-aff-coroutines": "~0.4.0"
+  },
+  "purescript-node-domain": {
+    "purescript-events": "joneshf/purescript-events#~0.1.2"
+  },
+  "purescript-node-events": {
+    "purescript-console": "~0.1.1",
+    "purescript-events": "joneshf/purescript-events#~0.1.1",
+    "purescript-functions": "~0.1.0-rc.1"
+  },
+  "purescript-node-fs-aff": {
+    "purescript-aff": "~0.13.1",
+    "purescript-node-fs": "~0.9.1",
+    "purescript-either": "~0.2.2",
+    "purescript-node-path": "~0.4.0"
+  },
+  "purescript-node-github": {
+    "purescript-math": "*",
+    "purescript-quickcheck": "*",
+    "purescript-arrays": "*",
+    "purescript-maybe": "*",
+    "purescript-foldable-traversable": "*",
+    "purescript-node-thunk": "git@github.com:andyfriesen/purescript-node-thunk.git#master",
+    "purescript-either": "~0.1.4"
+  },
+  "purescript-node-thunk": {
+    "purescript-exceptions": "~0.2.2",
+    "purescript-either": "~0.1.2"
+  },
+  "purescript-node-mongodb": {
+    "purescript-aff": "~0.13.1",
+    "purescript-argonaut": "~0.11.0",
+    "purescript-datetime": "~0.9.1",
+    "purescript-either": "~0.2.3",
+    "purescript-maybe": "~0.3.5",
+    "purescript-foldable-traversable": "~0.4.2",
+    "purescript-foreign": "~0.7.2",
+    "purescript-uri": "~0.2.0"
+  },
+  "purescript-uri": {
+    "purescript-exceptions": "~0.3.0",
+    "purescript-arrays": "~0.4.2",
+    "purescript-globals": "~0.2.1",
+    "purescript-integers": "~0.2.1",
+    "purescript-lists": "~0.7.5",
+    "purescript-maps": "~0.5.0",
+    "purescript-pathy": "~0.3.0",
+    "purescript-string-parsers": "~0.6.0"
+  },
+  "purescript-pathy": {
+    "purescript-console": "^0.1.1",
+    "purescript-exceptions": "^0.3.0",
+    "purescript-lists": "^0.7.4",
+    "purescript-profunctor": "^0.3.1",
+    "purescript-strings": "^0.7.0",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-node-postgres": {
+    "purescript-arrays": "~0.4.0",
+    "purescript-either": "~0.2.0",
+    "purescript-foreign": "~0.5.0",
+    "purescript-foldable-traversable": "~0.4.0",
+    "purescript-transformers": "~0.6.0",
+    "purescript-aff": "~0.11.0",
+    "purescript-integers": "~0.2.0"
+  },
+  "purescript-node-process": {
+    "purescript-console": "^0.1.0",
+    "purescript-maps": "~0.5.4",
+    "purescript-node-streams": "~0.3.0",
+    "purescript-maybe": "~0.3.5",
+    "purescript-exceptions": "~0.3.3",
+    "purescript-unsafe-coerce": "~0.1.0",
+    "purescript-node-fs": "~0.9.2",
+    "purescript-posix-types": "~0.1.1"
+  },
+  "purescript-node-redis": {
+    "purescript-aff": "^0.11.0",
+    "purescript-either": "^0.2.0",
+    "purescript-maybe": "^0.3.0",
+    "purescript-foldable-traversable": "^0.4.0",
+    "purescript-foreign": "^0.5.0",
+    "purescript-uri": "^0.1.0",
+    "purescript-nonempty": "^0.1.1",
+    "purescript-profunctor": "^0.3.0",
+    "purescript-strings": "^0.5.0",
+    "purescript-transformers": "^0.6.0"
+  },
+  "purescript-node-url": {
+    "purescript-console": "^0.1.0",
+    "purescript-nullable": "~0.2.1"
+  },
+  "purescript-node-uuid": {
+    "purescript-either": "~0.2.0",
+    "purescript-foreign": "~0.5.0",
+    "purescript-prelude": "~0.1.0",
+    "node-uuid": "~1.4.1",
+    "purescript-argonaut-codecs": "~0.1.0"
+  },
+  "node-uuid": {
+  },
+  "purescript-node-webkit": {
+    "purescript-maybe": "~0.2.1",
+    "purescript-arrays": "~0.3.0",
+    "purescript-monoid": "~0.1.4",
+    "purescript-node-events": "~0.2.0",
+    "purescript-events": "joneshf/purescript-events#~0.1.2",
+    "purescript-strings": "~0.4.0"
+  },
+  "purescript-nonempty-arrays": {
+    "purescript-quickcheck": "^0.6.0",
+    "purescript-arrays": "^0.4.0"
+  },
+  "purescript-number-format": {
+    "purescript-eff": "0.1.0",
+    "purescript-exceptions": "0.3.0",
+    "purescript-maybe": "0.3.2"
+  },
+  "purescript-oboe": {
+    "purescript-exceptions": "~0.2.0",
+    "purescript-http": "~0.2.0",
+    "oboe": "~1.15.1"
+  },
+  "oboe": {
+  },
+  "purescript-optic": {
+    "purescript-enums": "^0.7.0",
+    "purescript-lens": "^0.9.0",
+    "purescript-lists": "^0.7.5",
+    "purescript-transformers": "^0.8.1"
+  },
+  "purescript-optic-ui": {
+    "purescript-dom": "latest",
+    "purescript-functor-compose": "latest",
+    "purescript-exists": "latest",
+    "purescript-refs": "latest",
+    "purescript-aff": "latest",
+    "purescript-profunctor": "latest",
+    "purescript-profunctor-lenses": "latest",
+    "purescript-maps": "~0.5.0"
+  },
+  "purescript-partial": {
+  },
+  "purescript-path": {
+    "purescript-strongcheck": "~0.3.4",
+    "purescript-arrays": "~0.2.1",
+    "purescript-foldable-traversable": "~0.1.3",
+    "purescript-strings": "~0.4.0",
+    "purescript-maybe": "~0.2.1"
+  },
+  "purescript-phantomjs": {
+    "purescript-spec": "~0.7.1",
+    "purescript-console": "^0.1.0",
+    "purescript-functions": "~0.1.0",
+    "purescript-control": "~0.3.0",
+    "purescript-aff": "~0.11.3",
+    "purescript-arrays": "~0.4.1",
+    "purescript-maps": "~0.4.2",
+    "purescript-math": "~0.2.0",
+    "purescript-integers": "~0.2.1"
+  },
+  "purescript-platform": {
+    "purescript-console": "^0.1.1",
+    "purescript-eff": "^0.1.1",
+    "purescript-either": "^0.2.3",
+    "purescript-foreign": "^0.7.0",
+    "purescript-maybe": "^0.3.4"
+  },
+  "purescript-pray": {
+    "purescript-tuples": "~0.2.3",
+    "purescript-maybe": "~0.2.1",
+    "purescript-datetime": "~0.1.2",
+    "purescript-arrays": "~0.3.0",
+    "purescript-transformers": "~0.3.2",
+    "purescript-exists": "~0.1.0",
+    "purescript-dom": "~0.1.1",
+    "purescript-free": "~0.1.6"
+  },
+  "purescript-preface": {
+  },
+  "purescript-rationals": {
+    "purescript-console": "^0.1.0",
+    "purescript-strongcheck": "purescript-contrib/purescript-strongcheck#master",
+    "purescript-prelude": "^0.1.0",
+    "purescript-integers": "~0.2.1"
+  },
+  "purescript-react": {
+    "purescript-console": "~0.1.1",
+    "react": "~0.13.3",
+    "purescript-dom": "~0.2.6"
+  },
+  "react": {
+  },
+  "purescript-react-native": {
+    "purescript-console": "^0.1.0",
+    "purescript-react": "~0.4.1",
+    "purescript-functions": "~0.1.0"
+  },
+  "purescript-react-simple": {
+    "purescript-dom": "~0.1.0",
+    "react": "~0.11.1"
+  },
+  "purescript-refractor": {
+    "purescript-lens": "master"
+  },
+  "purescript-refractor-coproduct": {
+    "purescript-lens": "~0.9.0",
+    "purescript-coproducts": "~0.4.0"
+  },
+  "purescript-requestanimationframe": {
+    "purescript-dom": "~0.2.0"
+  },
+  "purescript-rest": {
+    "purescript-console": "^0.1.0",
+    "purescript-foreign": "~0.7.0",
+    "purescript-globals": "~0.2.1",
+    "purescript-node-http": "~0.1.2",
+    "purescript-node-url": "git@github.com:purescript-node/purescript-node-url.git#~0.1.1",
+    "purescript-refs": "~0.2.0",
+    "purescript-smolder": "~3.0.1"
+  },
+  "purescript-router": {
+    "purescript-eff": "latest",
+    "routie": "^0.3.2"
+  },
+  "routie": {
+  },
+  "purescript-routing": {
+    "purescript-console": "^0.1.0",
+    "purescript-aff": "^0.13.0",
+    "purescript-dom": "^0.2.6",
+    "purescript-eff": "^0.1.1",
+    "purescript-either": "^0.2.2",
+    "purescript-globals": "^0.2.1",
+    "purescript-lists": "^0.7.4",
+    "purescript-maps": "^0.5.0",
+    "purescript-maybe": "^0.3.4",
+    "purescript-prelude": "^0.1.2",
+    "purescript-semirings": "^0.2.0",
+    "purescript-tuples": "^0.4.0",
+    "purescript-validation": "^0.2.0"
+  },
+  "purescript-rwse-free": {
+    "purescript-free": "~0.9.1"
+  },
+  "purescript-rx": {
+    "purescript-console": "~0.1.0",
+    "purescript-monadplus-partial": "~0.2.0",
+    "purescript-tuples": "~0.4.0",
+    "purescript-prelude": "~0.1.0",
+    "purescript-foldable-traversable": "~0.4.0",
+    "purescript-control": "~0.3.0",
+    "purescript-aff": "~0.13.0"
+  },
+  "purescript-sammy": {
+    "purescript-console": "~0.1.1",
+    "purescript-jquery": "~0.6.0",
+    "sammy": "~0.7.6",
+    "purescript-eff": "~0.1.0"
+  },
+  "sammy": {
+  },
+  "purescript-search": {
+    "purescript-console": "^0.1.1",
+    "purescript-foldable-traversable": "^0.4.1",
+    "purescript-monoid": "^0.3.2",
+    "purescript-parsing": "^0.7.1",
+    "purescript-semirings": "^0.2.0",
+    "purescript-strings": "^0.7.1",
+    "purescript-strongcheck": "^0.14.5"
+  },
+  "purescript-sec": {
+    "purescript-arrays": "~0.3.5",
+    "purescript-maybe": "~0.2.2",
+    "purescript-profunctor": "~0.2.1",
+    "purescript-foldable-traversable": "~0.3.1"
+  },
+  "purescript-showdown": {
+  },
+  "purescript-signal-loop": {
+    "purescript-signal": "~3.0.0"
+  },
+  "purescript-simple-dom-generated": {
+    "purescript-console": "^0.1.0",
+    "purescript-dom": "~0.2.8",
+    "purescript-maybe": "~0.3.4",
+    "purescript-free": "~0.9.0"
+  },
+  "purescript-simple-moment": {
+    "purescript-console": "~0.1.1",
+    "purescript-debug": "~0.1.1",
+    "purescript-globals": "~0.2.1",
+    "purescript-strings": "~0.7.0",
+    "purescript-test-unit": "passy/purescript-test-unit#ee3450eb9aeaa15752c22a9cc0ff558214e557b6",
+    "moment": "~2.10.6",
+    "purescript-control": "~0.3.0",
+    "purescript-datetime": "~0.9.0",
+    "purescript-eff": "~0.1.1",
+    "purescript-functions": "~0.1.0",
+    "purescript-maybe": "~0.3.4",
+    "purescript-prelude": "~0.1.2"
+  },
+  "purescript-simple-request": {
+    "purescript-aff": "~0.13.1",
+    "purescript-generics": "~0.7.0",
+    "purescript-http": "~0.4.0",
+    "purescript-options": "~0.5.1"
+  },
+  "purescript-simple-templates": {
+  },
+  "purescript-socketio": {
+  },
+  "purescript-spec-reporter-xunit": {
+  },
+  "purescript-spidermonkey-ast": {
+  },
+  "purescript-streams": {
+  },
+  "purescript-test-pontificate": {
+  },
+  "purescript-thermite": {
+  },
+  "purescript-thermite-aff": {
+  },
+  "purescript-tiny-emitter": {
+  },
+  "purescript-toastr": {
+  },
+  "purescript-totally": {
+  },
+  "purescript-trampoline": {
+  },
+  "purescript-typeable": {
+  },
+  "purescript-typedarray": {
+  },
+  "purescript-ui": {
+  },
+  "purescript-unix": {
+  },
+  "purescript-var": {
+  },
+  "purescript-vector-space": {
+  },
+  "purescript-versions": {
+  },
+  "purescript-virtual-dom": {
+  },
+  "purescript-virtual-dom-typed": {
+  },
+  "purescript-webdriver": {
+  },
+  "purescript-webgl": {
+  },
+  "purescript-webgl-examples": {
+  },
+  "purescript-webidl": {
+  },
+  "purescript-webrtc": {
+  },
+  "purescript-websocket-simple": {
+  },
+  "purescript-webstorage": {
+  },
+  "purescript-wikitext": {
+  },
+  "purescript-winston": {
+  },
+  "purescript-xhr": {
+  },
+  "purescript-yaml": {
+  },
+  "purescript-yargs": {
+  },
+  "purescript-yoneda": {
+  },
+  "purescript-zclipboard": {
+  }
+}
